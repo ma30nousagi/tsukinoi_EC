@@ -1,0 +1,26 @@
+/* breadcrumbs.liquid */
+.bread-bg {
+  background-color: #FFF;
+  padding: 10px 0;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 5rem;
+}
+.bread-wrapper {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0.5rem 0;
+}
+.bread-wrapper a, .bread-wrapper span {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none; 
+}
+
+@media screen and (max-width: 749px) {
+  .bread-bg {
+    padding: 0 2rem;
+  }
+}

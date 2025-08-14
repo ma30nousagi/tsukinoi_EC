@@ -8,36 +8,45 @@
         "padding_bottom": 36
       }
     },
-    "image_banner": {
-      "type": "image-banner",
+    "page_header_tRaqx6": {
+      "type": "page-header",
+      "name": "ページヘッダー",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Image_banner_2x_8.png",
-        "image_overlay_opacity": 20,
-        "image_height": "adapt",
-        "desktop_content_position": "middle-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "left",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
-      }
-    },
-    "form": {
-      "type": "contact-form",
-      "settings": {
-        "heading": "Questions or comments? Get in touch and we'll be happy to help.",
-        "heading_size": "h2",
-        "color_scheme": "scheme-1",
+        "head_img": "shopify:\/\/shop_images\/page_hed_products.jpg",
+        "height_top": 150,
+        "height_bottom": 150,
+        "height_top_sp": 100,
+        "height_bottom_sp": 50,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "breadcrumbs_TJFWGm": {
+      "type": "breadcrumbs",
+      "name": "パンくずリスト",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_contact_form_KR3E7m": {
+      "type": "section-contact-form",
+      "name": "お問合せフォーム",
+      "settings": {
+        "heading": "CONTACT",
+        "message": "<p>お問い合わせは、メールフォームをご利用ください。<br>お問い合わせ後は自動送信メールが送られますのでご確認ください。<br>その後、担当者が確認し次第、ご連絡いたします。<br><br>内容によっては、お時間をいただく場合がございます。<br>一週間たっても返信のない場合や、お急ぎの場合は、お電話(029-224-7171)までご連絡ください。<\/p>",
+        "color_scheme": "",
+        "p_t_pc": 20,
+        "p_b_pc": 20,
+        "p_t_sp": 20,
+        "p_b_sp": 20
       }
     }
   },
   "order": [
     "main",
-    "image_banner",
-    "form"
+    "page_header_tRaqx6",
+    "breadcrumbs_TJFWGm",
+    "section_contact_form_KR3E7m"
   ]
 }

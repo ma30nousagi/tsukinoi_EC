@@ -1,0 +1,244 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}  
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.p_t_sp }}px;
+    padding-bottom: {{ section.settings.p_b_sp }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.p_t_pc }}px;
+      padding-bottom: {{ section.settings.p_b_pc }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-main-contact main-contact color-{{ section.settings.color_scheme }} gradient">
+  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <header class="section-header-wrapper center">
+        <h1 class="page-heading--title{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {{ section.settings.heading }}
+        </h1>
+      </header>     
+    {%- endif -%}
+      <div class="main-contact-message">
+        {{ section.settings.message }}
+      </div>
+    {%- liquid
+      assign contact_form_class = 'isolate'
+      if settings.animations_reveal_on_scroll
+        assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
+      endif
+    -%}
+    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+      {%- if form.posted_successfully? -%}
+        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+          {% render 'icon-success' %}
+          {{ 'templates.contact.form.post_success' | t }}
+        </h2>
+      {%- elsif form.errors -%}
+        <div class="form__message">
+          <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+            {% render 'icon-error' %}
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+        </div>
+        <ul class="form-status-list caption-large" role="list">
+          <li>
+            <a href="#ContactForm-email" class="link">
+              {{ form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email }}
+            </a>
+          </li>
+        </ul>
+      {%- endif -%}
+      <div class="contact__wrapper">
+        {% comment  %}name-field{% endcomment %}
+        <div class="field__wrapper">
+          <p class="field__wrapper-label">{{ 'templates.contact.form.name' | t }}</p>
+          <div class="field">
+            <input
+              class="field__input"
+              autocomplete="name"
+              type="text"
+              id="ContactForm-name"
+              name="contact[{{ 'templates.contact.form.name' | t }}]"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              placeholder="{{ 'templates.contact.form.name' | t }}"
+            >
+            {% comment  %}
+            <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+            {% endcomment %}             
+          </div>
+        </div>
+        {% comment  %}mail-field{% endcomment %}
+        <div class="field__wrapper">
+          <p class="field__wrapper-label">{{- 'templates.contact.form.email' | t }}
+            <span aria-hidden="true">*</span>
+          </p>
+          <div class="field field--with-error">
+            <input
+              autocomplete="email"
+              type="email"
+              id="ContactForm-email"
+              class="field__input"
+              name="contact[email]"
+              spellcheck="false"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              aria-required="true"
+              {% if form.errors contains 'email' %}
+                aria-invalid="true"
+                aria-describedby="ContactForm-email-error"
+              {% endif %}
+              placeholder="{{ 'templates.contact.form.email' | t }}"
+            >
+            {% comment  %}
+            <label class="field__label" for="ContactForm-email">
+              {{- 'templates.contact.form.email' | t }}
+              <span aria-hidden="true">*</span></label
+            >
+            {% endcomment %}
+            {%- if form.errors contains 'email' -%}
+              <small class="contact__field-error" id="ContactForm-email-error">
+                <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                <span class="form__message">
+                  {%- render 'icon-error' -%}
+                  {{- form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email -}}
+                </span>
+              </small>
+            {%- endif -%}
+          </div>
+        </div>        
+      </div>
+
+      {% comment  %}tel-field{% endcomment %}
+      <div class="field__wrapper">
+        <p class="field__wrapper-label">{{ 'templates.contact.form.phone' | t }}</p>
+        <div class="field">
+          <input
+            type="tel"
+            id="ContactForm-phone"
+            class="field__input"
+            autocomplete="tel"
+            name="contact[{{ 'templates.contact.form.phone' | t }}]"
+            pattern="[0-9\-]*"
+            value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+            placeholder="{{ 'templates.contact.form.phone' | t }}"
+          >
+          {% comment  %}
+          <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+          {% endcomment %}
+        </div>
+      </div>
+      {% comment  %}comment-field{% endcomment %}
+      <div class="field__wrapper">
+        <p class="field__wrapper-label">{{- 'templates.contact.form.comment' | t -}}</p>
+        <div class="field">
+          <textarea
+            rows="10"
+            id="ContactForm-body"
+            class="text-area field__input"
+            name="contact[{{ 'templates.contact.form.comment' | t }}]"
+            placeholder="{{ 'templates.contact.form.comment' | t }}"
+          >
+            {{- form.body -}}
+          </textarea>
+          {% comment  %}
+          <label class="form__label field__label" for="ContactForm-body">
+            {{- 'templates.contact.form.comment' | t -}}
+          </label>
+          {% endcomment %}
+        </div>
+      </div>      
+      <div class="contact__button center">
+        <button type="submit" class="button c-button">
+          {{ 'templates.contact.form.send' | t }}
+        </button>
+      </div>
+    {%- endform -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.contact-form.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "CONTACT",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "message",
+      "default": "<p>お問い合わせは、メールフォームをご利用ください。<br>お問い合わせ後は自動送信メールが送られますのでご確認ください。<br>その後、担当者が確認し次第、ご連絡いたします。<br><br>内容によっては、お時間をいただく場合がございます。<br>一週間たっても返信のない場合や、お急ぎの場合は、お電話(029-224-7171)までご連絡ください。</p>",
+      "label": "お問い合わせ本文"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "PC画面のセッティング"
+    },
+    {
+      "type": "range",
+      "id": "p_t_pc",
+      "label": "セクション上の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "range",
+      "id": "p_b_pc",
+      "label": "セクション下の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "header",
+      "content": "SP画面のセッティング"
+    },
+    {
+      "type": "range",
+      "id": "p_t_sp",
+      "label": "セクション上の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "range",
+      "id": "p_b_sp",
+      "label": "セクション下の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "お問合せフォーム"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,153 @@
+{%- style -%}
+  .page-header {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .page-header-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: {{ section.settings.height_top }}px;
+    padding-bottom: {{ section.settings.height_bottom }}px;
+  }
+  @media screen and (max-width: 480px) {
+    .page-header-img {
+      padding-top: {{ section.settings.height_top_sp }}px;
+      padding-bottom: {{ section.settings.height_bottom_sp }}px;
+    }
+  }
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.p_t_sp }}px;
+    padding-bottom: {{ section.settings.p_b_sp }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.p_t_pc }}px;
+      padding-bottom: {{ section.settings.p_b_pc }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<section class="page-header">
+  {% if section.settings.head_img != blank %}
+    <div class="page-header-img" style="background-image: url({{ section.settings.head_img | img_url: 'master' }});"></div>
+  {% endif %}
+</section>
+
+{% schema %}
+  {
+    "name": "ページヘッダー",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "head_img",
+        "label": "ヘッダーイメージ"
+      },
+      {
+        "type": "header",
+        "content": "画像高さ(PC)"
+      },
+      {
+        "type": "range",
+        "id": "height_top",
+        "min": 0,
+        "max": 400,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 150
+      },
+      {
+        "type": "range",
+        "id": "height_bottom",
+        "min": 0,
+        "max": 400,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 150
+      },
+      {
+        "type": "header",
+        "content": "画像高さスマホ版"
+      },
+      {
+        "type": "range",
+        "id": "height_top_sp",
+        "min": 0,
+        "max": 400,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "height_bottom_sp",
+        "min": 0,
+        "max": 400,
+        "step": 10,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 50
+      },   
+      {
+        "type": "header",
+        "content": "PC画面のセッティング"
+      },
+      {
+        "type": "range",
+        "id": "p_t_pc",
+        "label": "セクション上の余白",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 4
+      },
+      {
+        "type": "range",
+        "id": "p_b_pc",
+        "label": "セクション下の余白",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 4
+      },
+      {
+        "type": "header",
+        "content": "SP画面のセッティング"
+      },
+      {
+        "type": "range",
+        "id": "p_t_sp",
+        "label": "セクション上の余白",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 4
+      },
+      {
+        "type": "range",
+        "id": "p_b_sp",
+        "label": "セクション下の余白",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 4
+      }
+    ],
+    "presets": [
+      {
+        "name": "ページヘッダー"
+      }
+    ]
+  }
+{% endschema %}

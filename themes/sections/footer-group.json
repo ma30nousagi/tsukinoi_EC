@@ -2,20 +2,157 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "footer": {
-      "type": "footer",
+    "footer_subscription_yqkwCx": {
+      "type": "footer-subscription",
+      "name": "フッターサブスクリプション",
+      "settings": {
+        "color_scheme": "",
+        "head_img": "shopify:\/\/shop_images\/footer_subscription.jpg",
+        "height_top": 40,
+        "height_bottom": 40,
+        "height_top_sp": 50,
+        "height_bottom_sp": 50,
+        "title": "月の井の頒布会",
+        "sub_title": "SUBSCRIPTION",
+        "link": "",
+        "btn_text": "お申し込み",
+        "p_t_pc": 20,
+        "p_b_pc": 20,
+        "p_t_sp": 20,
+        "p_b_sp": 20
+      }
+    },
+    "footer_top_XPAacA": {
+      "type": "footer-top",
       "blocks": {
-        "link_list": {
+        "link_list_UrkBc8": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "CATEGORY",
+            "menu": "link-list-category"
+          }
+        },
+        "link_list_EKD4Xj": {
+          "type": "link_list",
+          "settings": {
+            "heading": "SIZE",
+            "menu": "link-sake-size"
+          }
+        },
+        "link_list_VMz4mt": {
+          "type": "link_list",
+          "settings": {
+            "heading": "BRAND",
+            "menu": "link-list-brand"
+          }
+        },
+        "link_list_i4nEQD": {
+          "type": "link_list",
+          "settings": {
+            "heading": "TYPE",
+            "menu": "link-list-type"
           }
         }
       },
       "block_order": [
-        "link_list"
+        "link_list_UrkBc8",
+        "link_list_EKD4Xj",
+        "link_list_VMz4mt",
+        "link_list_i4nEQD"
       ],
+      "name": "フッターメニュー",
+      "settings": {
+        "color_scheme": "scheme-5",
+        "newsletter_enable": false,
+        "newsletter_heading": "ストアからのメールを受け取る",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": false,
+        "margin_top": 0,
+        "margin_top_sp": 0,
+        "p_t_pc": 60,
+        "p_b_pc": 0,
+        "p_t_sp": 40,
+        "p_b_sp": 0
+      }
+    },
+    "footer_bottom_6ENGxd": {
+      "type": "footer-bottom",
+      "blocks": {
+        "text_GgMbAx": {
+          "type": "text",
+          "settings": {
+            "heading": "アルコールの販売について",
+            "subtext": "<p>20歳未満の飲酒は法律により禁じられております。<br\/>※当店は20歳未満のお客様への酒類の販売はいたしておりません。<\/p>"
+          }
+        },
+        "link_list_xLkebj": {
+          "type": "link_list",
+          "settings": {
+            "heading": "ご利用案内",
+            "menu": "link-list-guide"
+          }
+        }
+      },
+      "block_order": [
+        "text_GgMbAx",
+        "link_list_xLkebj"
+      ],
+      "name": "フッターボトム",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "color_scheme_2": "scheme-3",
+        "newsletter_enable": false,
+        "newsletter_heading": "メルマガ",
+        "newsletter_text": "新商品や限定商品のご案内など、お得な情報をお届けします。",
+        "enable_follow_on_shop": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "address": "〒311-1301 茨城県東茨城郡大洗町磯浜町638",
+        "margin_top": 0,
+        "margin_top_sp": 0,
+        "p_t_pc": 60,
+        "p_b_pc": 40,
+        "p_t_sp": 40,
+        "p_b_sp": 0,
+        "image": "shopify:\/\/shop_images\/logo-column-white.png",
+        "image_width": 75,
+        "alignment": "center",
+        "btm_t_pc": 20,
+        "btm_b_pc": 20,
+        "btm_t_sp": 20,
+        "btm_b_sp": 20
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_yDdLWn": {
+          "type": "text",
+          "settings": {
+            "heading": "見出し",
+            "subtext": "<p>連絡先情報、ストア詳細、ブランドのコンテンツをお客様と共有します。<\/p>"
+          }
+        },
+        "link_list_R6WDke": {
+          "type": "link_list",
+          "settings": {
+            "heading": "ご利用案内",
+            "menu": "link-list-guide"
+          }
+        }
+      },
+      "block_order": [
+        "text_yDdLWn",
+        "link_list_R6WDke"
+      ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-4",
         "newsletter_enable": false,
@@ -33,6 +170,9 @@
     }
   },
   "order": [
+    "footer_subscription_yqkwCx",
+    "footer_top_XPAacA",
+    "footer_bottom_6ENGxd",
     "footer"
   ]
 }

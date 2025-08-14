@@ -465,10 +465,10 @@ table:not([class]) th {
   opacity: 0.7;
 }
 
-a:empty,
+/* a:empty, */
 ul:empty,
 dl:empty,
-div:empty,
+/* div:empty, */
 section:empty,
 article:empty,
 p:empty,

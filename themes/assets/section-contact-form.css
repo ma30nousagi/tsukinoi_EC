@@ -37,3 +37,27 @@
     grid-column-gap: 2rem;
   }
 }
+
+/* custom */
+.main-contact-message {
+  padding: 2rem 0 3rem 0;
+}
+
+.field__wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.field__wrapper-label {
+  width: 180px;
+  margin-bottom: 2rem;
+}
+
+.section-main-contact .field__input:focus {
+  padding: 0.8rem 1.5rem .8rem 2rem!important;
+}
+
+.section-main-contact .field__input {
+  padding: .8rem 1.5rem .8rem 2rem;
+}
