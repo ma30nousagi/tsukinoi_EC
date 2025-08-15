@@ -61,3 +61,8 @@
 .section-main-contact .field__input {
   padding: .8rem 1.5rem .8rem 2rem;
 }
+
+/* form */
+.section-contact .field__input:focus {
+  padding: .8rem 1.5rem;
+}

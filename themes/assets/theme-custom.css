@@ -10,3 +10,57 @@
 .c_green {
   color: #EFEEE3;
 }
+
+.page-heading--title {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.page-heading--title .subtitle {
+  color: var(--color-main);
+  display: block;
+}
+
+.guide_box h3 {
+  border-bottom: solid 0.1rem var(--color-main);
+  color: var(--color-main);
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+.page-width--narrow {
+  max-width: 85rem!important;
+}
+
+/* button */
+.button__base {
+  background: var(--color-main);
+  color: var(--color-white);
+  padding: 12px 20px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  position: relative;
+  outline: none;
+  border: none;
+  font-family: var(--font-body-family);
+  min-width: 20rem;
+}
+
+.button__base:hover {
+  opacity: .8;
+}
+
+.field__label {
+  color: #c3c3c3;
+  font-size: 1.4rem;
+}

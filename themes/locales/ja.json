@@ -58,7 +58,7 @@
     }
   },
   "newsletter": {
-    "label": "メール",
+    "label": "メールアドレス",
     "success": "ご登録ありがとうございます",
     "button_label": "登録"
   },
@@ -94,7 +94,7 @@
       "email": "メール",
       "message": "コメント",
       "post": "コメントを投稿する",
-      "back_to_blog": "ブログに戻る",
+      "back_to_blog": "記事一覧に戻る",
       "share": "この記事を共有する",
       "success": "コメントが投稿されました。ありがとうございます。",
       "success_moderated": "コメントが投稿されました。ブログが管理されているため、しばらくしてから公開されます。"
@@ -106,7 +106,7 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "カートに追加する",
+      "add_to_cart": "カートに入れる",
       "description": "商品説明",
       "on_sale": "セール",
       "product_variants": "商品バリエーション",
@@ -251,10 +251,10 @@
     },
     "contact": {
       "form": {
-        "name": "名前",
+        "name": "お名前",
         "email": "メール",
         "phone": "電話番号",
-        "comment": "コメント",
+        "comment": "内容",
         "send": "送信する",
         "post_success": "お問い合わせいただきありがとうございます。早急に返信いたします。",
         "error_heading": "以下を確認してください。",
@@ -276,7 +276,7 @@
       }
     },
     "cart": {
-      "title": "あなたのカート",
+      "title": "カート",
       "caption": "カートアイテム",
       "remove_title": "{{ title }}を削除する",
       "note": "注文に関する特別な指示・備考",
@@ -525,6 +525,20 @@
       "send_on_label": "送信日 (任意)",
       "expanded": "ギフトカードカードの受取人フォームを展開しました",
       "collapsed": "ギフトカードカードの受取人フォームを折りたたみました"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "cart": "カート",
+        "back_to_cart": "カートに戻る"
+      },
+      "order_summary": {
+        "shopping_cart_label": "カート"
+      }
+    },
+    "page_titles": {
+      "shopping_cart": "カート"
     }
   }
 }

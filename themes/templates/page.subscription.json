@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "page_header_7DW6fC": {
+      "type": "page-header",
+      "name": "ページヘッダー",
+      "settings": {
+        "head_img": "shopify:\/\/shop_images\/page_header_0010.jpg",
+        "height_top": 150,
+        "height_bottom": 150,
+        "height_top_sp": 100,
+        "height_bottom_sp": 50,
+        "p_t_pc": 20,
+        "p_b_pc": 20,
+        "p_t_sp": 20,
+        "p_b_sp": 20
+      }
+    },
+    "breadcrumbs_HnebMi": {
+      "type": "breadcrumbs",
+      "name": "パンくずリスト",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "page_header_7DW6fC",
+    "breadcrumbs_HnebMi",
+    "main"
+  ]
+}

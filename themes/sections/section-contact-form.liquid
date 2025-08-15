@@ -14,18 +14,17 @@
   }
 {%- endstyle -%}
 
-<div class="section-main-contact main-contact color-{{ section.settings.color_scheme }} gradient">
+<div class="section-contact color-{{ section.settings.color_scheme }} gradient">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
-      <header class="section-header-wrapper center">
-        <h1 class="page-heading--title{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          {{ section.settings.heading }}
-        </h1>
-      </header>     
+      <h1 class="page-heading--title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {{ section.settings.heading }}
+        <span class="subtitle">Contact</span>
+      </h1>
+    {%- else -%}
+      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
-      <div class="main-contact-message">
-        {{ section.settings.message }}
-      </div>
+      <p>{{ section.settings.message }}</p>
     {%- liquid
       assign contact_form_class = 'isolate'
       if settings.animations_reveal_on_scroll
@@ -35,13 +34,13 @@
     {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
-          {% render 'icon-success' %}
+          {{- 'icon-success.svg' | inline_asset_content -}}
           {{ 'templates.contact.form.post_success' | t }}
         </h2>
       {%- elsif form.errors -%}
         <div class="form__message">
           <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
-            {% render 'icon-error' %}
+            {{- 'icon-error.svg' | inline_asset_content -}}
             {{ 'templates.contact.form.error_heading' | t }}
           </h2>
         </div>
@@ -57,7 +56,10 @@
       <div class="contact__wrapper">
         {% comment  %}name-field{% endcomment %}
         <div class="field__wrapper">
-          <p class="field__wrapper-label">{{ 'templates.contact.form.name' | t }}</p>
+          <p class="field__wrapper-label">
+            {{ 'templates.contact.form.name' | t }}
+            <span aria-hidden="true">*</span>
+          </p>
           <div class="field">
             <input
               class="field__input"
@@ -68,14 +70,13 @@
               value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
               placeholder="{{ 'templates.contact.form.name' | t }}"
             >
-            {% comment  %}
-            <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
-            {% endcomment %}             
+            {% comment %} <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label> {% endcomment %}
           </div>
         </div>
         {% comment  %}mail-field{% endcomment %}
         <div class="field__wrapper">
-          <p class="field__wrapper-label">{{- 'templates.contact.form.email' | t }}
+          <p class="field__wrapper-label">
+            {{- 'templates.contact.form.email' | t }}
             <span aria-hidden="true">*</span>
           </p>
           <div class="field field--with-error">
@@ -95,26 +96,25 @@
               {% endif %}
               placeholder="{{ 'templates.contact.form.email' | t }}"
             >
-            {% comment  %}
-            <label class="field__label" for="ContactForm-email">
+            {% comment %} <label class="field__label" for="ContactForm-email">
               {{- 'templates.contact.form.email' | t }}
               <span aria-hidden="true">*</span></label
-            >
-            {% endcomment %}
+            > {% endcomment %}
             {%- if form.errors contains 'email' -%}
               <small class="contact__field-error" id="ContactForm-email-error">
                 <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
                 <span class="form__message">
-                  {%- render 'icon-error' -%}
+                  <span class="svg-wrapper">
+                    {{- 'icon-error.svg' | inline_asset_content -}}
+                  </span>
                   {{- form.errors.translated_fields.email | capitalize }}
                   {{ form.errors.messages.email -}}
                 </span>
               </small>
             {%- endif -%}
           </div>
-        </div>        
+        </div>
       </div>
-
       {% comment  %}tel-field{% endcomment %}
       <div class="field__wrapper">
         <p class="field__wrapper-label">{{ 'templates.contact.form.phone' | t }}</p>
@@ -129,14 +129,15 @@
             value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
             placeholder="{{ 'templates.contact.form.phone' | t }}"
           >
-          {% comment  %}
-          <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
-          {% endcomment %}
+          {% comment %} <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label> {% endcomment %}
         </div>
       </div>
       {% comment  %}comment-field{% endcomment %}
       <div class="field__wrapper">
-        <p class="field__wrapper-label">{{- 'templates.contact.form.comment' | t -}}</p>
+        <p class="field__wrapper-label">
+          {{- 'templates.contact.form.comment' | t -}}
+          <span aria-hidden="true">*</span>
+        </p>
         <div class="field">
           <textarea
             rows="10"
@@ -144,18 +145,17 @@
             class="text-area field__input"
             name="contact[{{ 'templates.contact.form.comment' | t }}]"
             placeholder="{{ 'templates.contact.form.comment' | t }}"
+            aria-required="true"
           >
             {{- form.body -}}
           </textarea>
-          {% comment  %}
-          <label class="form__label field__label" for="ContactForm-body">
+          {% comment %} <label class="form__label field__label" for="ContactForm-body">
             {{- 'templates.contact.form.comment' | t -}}
-          </label>
-          {% endcomment %}
+          </label> {% endcomment %}
         </div>
-      </div>      
+      </div>
       <div class="contact__button center">
-        <button type="submit" class="button c-button">
+        <button type="submit" class="button__base">
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
@@ -175,13 +175,13 @@
     {
       "type": "inline_richtext",
       "id": "heading",
-      "default": "CONTACT",
+      "default": "お問い合わせ",
       "label": "Heading"
     },
     {
       "type": "richtext",
       "id": "message",
-      "default": "<p>お問い合わせは、メールフォームをご利用ください。<br>お問い合わせ後は自動送信メールが送られますのでご確認ください。<br>その後、担当者が確認し次第、ご連絡いたします。<br><br>内容によっては、お時間をいただく場合がございます。<br>一週間たっても返信のない場合や、お急ぎの場合は、お電話(029-224-7171)までご連絡ください。</p>",
+      "default": "<p>商品に関する事や、当店に対するご意見ご感想、お問い合わせなど、こちらのフォームよりお気軽にお尋ねください。</p>",
       "label": "お問い合わせ本文"
     },
     {

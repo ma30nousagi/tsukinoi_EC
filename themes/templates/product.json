@@ -1,8 +1,15 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
+      "type": "custom-main-product",
       "blocks": {
+        "text_pNpHJm": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "body"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -11,78 +18,67 @@
           "type": "price",
           "settings": {}
         },
-        "description": {
-          "type": "description",
+        "variant_picker_cFH37X": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "quantity_selector_TdtBrG": {
+          "type": "quantity_selector",
           "settings": {}
         },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
+        "buy_buttons_QKYiVU": {
+          "type": "buy_buttons",
           "settings": {
-            "heading": "Product features",
-            "icon": "star",
-            "content": "",
-            "page": "product-features"
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
           }
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials and care",
-            "icon": "leaf",
+            "heading": "送料",
+            "icon": "none",
             "content": "",
             "page": "materials-and-care"
           }
         },
-        "collapsible-row-2": {
+        "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Merchandising tips",
-            "icon": "check_mark",
+            "heading": "お支払い方法",
+            "icon": "none",
             "content": "",
-            "page": "merchandising-tips"
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
+            "page": "shopping-guide"
           }
         }
       },
       "block_order": [
+        "text_pNpHJm",
         "title",
         "price",
-        "description",
-        "collapsible-row-1",
+        "variant_picker_cFH37X",
+        "quantity_selector_TdtBrG",
+        "buy_buttons_QKYiVU",
         "collapsible-row-0",
-        "collapsible-row-2",
-        "share"
+        "collapsible-row-1"
       ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
         "media_size": "small",
         "constrain_to_viewport": false,
-        "media_fit": "cover",
-        "gallery_layout": "thumbnail_slider",
-        "media_position": "right",
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
         "image_zoom": "lightbox",
-        "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "quick-order-list": {
-      "type": "quick-order-list",
-      "settings": {
-        "variants_per_page": 50,
-        "show_image": true,
-        "show_sku": true,
-        "color_scheme": "scheme-2",
-        "padding_top": 36,
-        "padding_bottom": 16
       }
     },
     "related-products": {
@@ -92,13 +88,13 @@
         "heading_size": "h2",
         "products_to_show": 5,
         "columns_desktop": 5,
+        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 44
       }
@@ -106,7 +102,6 @@
   },
   "order": [
     "main",
-    "quick-order-list",
     "related-products"
   ]
 }

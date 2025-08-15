@@ -17,8 +17,10 @@
         "height_bottom": 150,
         "height_top_sp": 100,
         "height_bottom_sp": 50,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "p_t_pc": 20,
+        "p_b_pc": 20,
+        "p_t_sp": 20,
+        "p_b_sp": 20
       }
     },
     "breadcrumbs_TJFWGm": {
@@ -33,13 +35,13 @@
       "type": "section-contact-form",
       "name": "お問合せフォーム",
       "settings": {
-        "heading": "CONTACT",
-        "message": "<p>お問い合わせは、メールフォームをご利用ください。<br>お問い合わせ後は自動送信メールが送られますのでご確認ください。<br>その後、担当者が確認し次第、ご連絡いたします。<br><br>内容によっては、お時間をいただく場合がございます。<br>一週間たっても返信のない場合や、お急ぎの場合は、お電話(029-224-7171)までご連絡ください。<\/p>",
+        "heading": "お問い合わせ",
+        "message": "<p>商品に関する事や、当店に対するご意見ご感想、お問い合わせなど、こちらのフォームよりお気軽にお尋ねください。<\/p>",
         "color_scheme": "",
         "p_t_pc": 20,
-        "p_b_pc": 20,
+        "p_b_pc": 100,
         "p_t_sp": 20,
-        "p_b_sp": 20
+        "p_b_sp": 60
       }
     }
   },
