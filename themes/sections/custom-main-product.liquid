@@ -1,6 +1,6 @@
 <product-info
   id="MainProduct-{{ section.id }}"
-  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
+  class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }} custom-product"
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
   data-update-url="true"
@@ -26,17 +26,17 @@
   {%- endif -%}
 
   {%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.p_t_sp }}px;
+    padding-bottom: {{ section.settings.p_b_sp }}px;
+  }
+  
+  @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      padding-top: {{ section.settings.p_t_pc }}px;
+      padding-bottom: {{ section.settings.p_b_pc }}px;
     }
-
-    @media screen and (min-width: 750px) {
-      .section-{{ section.id }}-padding {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
-      }
-    }
+  }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -106,8 +106,8 @@
                   </a>
                 </div>
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                  {%- render 'price',
+                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }} class="price__product">
+                  {%- render 'price-product',
                     product: product,
                     use_variant: true,
                     show_badges: true,
@@ -120,7 +120,7 @@
                   </div>
                 {%- endif -%}
                 {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
-                  <div class="product__tax caption rte">
+                  <div class="product__tax caption rte product__tax-caption">
                     {%- if cart.duties_included and cart.taxes_included -%}
                       {{ 'products.product.duties_and_taxes_included' | t }}
                     {%- elsif cart.taxes_included -%}
@@ -207,10 +207,28 @@
                   <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span>
                   {{- product.selected_or_first_available_variant.sku -}}
                 </p>
+              {%- when 'product__vendor' -%}
+                <p class="product__vendor">
+                  {{ product.vendor }}
+                </p>
+              {%- when 'product__gift' -%}
+                <div class="product-form__input product__gift-wrapper">
+                  <label class="form__label">化粧箱／ギフト包装／のし</label>
+                  <div class="line-item-property__field select">                 
+                    <select id="" name="properties[化粧箱／ギフト包装／のし]" class="select__select" form='product-form-{{ section.id }}'>
+                      <option value="なし">なし</option>
+                      <option value="ギフト包装希望">ギフト包装希望</option>
+                      <option value="のし希望">のし希望</option>
+                    </select>
+                    <span class="svg-wrapper">
+                      <svg class="icon icon-caret" viewBox="0 0 10 6"><path fill="currentColor" fill-rule="evenodd" d="M9.354.646a.5.5 0 0 0-.708 0L5 4.293 1.354.646a.5.5 0 0 0-.708.708l4 4a.5.5 0 0 0 .708 0l4-4a.5.5 0 0 0 0-.708" clip-rule="evenodd"></path></svg>
+                    </span>
+                  </div>
+                </div>
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
-                <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                <div class="product__accordion product__custom-accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                   <details id="Details-{{ block.id }}-{{ section.id }}">
                     <summary>
                       <div class="summary__title">
@@ -219,7 +237,8 @@
                           {{ block.settings.heading | default: block.settings.page.title | escape }}
                         </h2>
                       </div>
-                      {{- 'icon-caret.svg' | inline_asset_content -}}
+                      {% comment %} {{- 'icon-caret.svg' | inline_asset_content -}} {% endcomment %}
+                      <svg class="icon icon-caret"  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
                     </summary>
                     <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                       {{ block.settings.content }}
@@ -968,6 +987,16 @@
       ]
     },
     {
+      "type": "product__vendor",
+      "name": "ブランド（ベンダー）",
+      "limit": 1
+    },
+    {
+      "type": "product__gift",
+      "name": "ギフト／のし",
+      "limit": 1
+    },
+    {
       "type": "custom_liquid",
       "name": "t:sections.custom-liquid.name",
       "settings": [
@@ -1402,27 +1431,47 @@
     },
     {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "PC画面のセッティング"
     },
     {
       "type": "range",
-      "id": "padding_top",
+      "id": "p_t_pc",
+      "label": "セクション上の余白",
+      "default": 20,
       "min": 0,
       "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "step": 4
     },
     {
       "type": "range",
-      "id": "padding_bottom",
+      "id": "p_b_pc",
+      "label": "セクション下の余白",
+      "default": 20,
       "min": 0,
       "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "step": 4
+    },
+    {
+      "type": "header",
+      "content": "SP画面のセッティング"
+    },
+    {
+      "type": "range",
+      "id": "p_t_sp",
+      "label": "セクション上の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "range",
+      "id": "p_b_sp",
+      "label": "セクション下の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
     }
   ]
 }

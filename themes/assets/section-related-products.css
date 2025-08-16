@@ -4,4 +4,26 @@
 
 .related-products__heading {
   margin: 0 0 3rem;
+  text-align: center;
+}
+
+/* custom */
+.custom__related-products {
+  border-top: solid .1rem var(--color-main);
+}
+
+/* related-card-product.liquid */
+.related__product-card-wrapper {
+
+}
+
+.related__product-card-wrapper .card__heading {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* related-product-price.liquid */
+.price__container.related__price {
+  display: block!important;
+  text-align: right;
 }

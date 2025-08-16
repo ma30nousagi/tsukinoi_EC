@@ -1492,3 +1492,124 @@ a.product__text {
     border: none;
   }
 }
+
+
+/* custom */
+.custom-product .product__info-container {
+  background: #efeee3;
+  padding: 2rem;
+}
+
+.product__vendor {
+  background: var(--color-main);
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
+.product__title h1 {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.product_description__wrapper {
+  margin-top: 4rem;
+}
+
+.product_description__wrapper .page-heading--title {
+  font-size: 2.4rem;
+}
+
+.product__description.rte {
+  margin-bottom: 3rem;
+}
+
+.product__detail-table {
+  text-align: left;
+  width: 100%;
+}
+
+.product__detail-table,
+.product__detail-table td,
+.product__detail-table th {
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+.product__detail-table td,
+.product__detail-table th {
+	padding: 5px 20px!important;
+	width: 100%;
+}
+.product__detail-table th {
+  font-weight: normal;
+  width: 40%;
+}
+
+.product-form__input--pill input[type=radio]:checked+label {
+  background-color: var(--color-main)!important;
+  color: #ffffff!important;
+  border: 1px solid var(--color-main)!important;
+}
+
+.product-form__input--pill input[type=radio]+label {
+  background-color: #EFEEE3!important;
+  border: 1px solid var(--color-main)!important;
+  color: var(--color-main)!important;
+}
+
+.quantity:before {
+  background: #EFEEE3;
+}
+
+.quantity:after {
+  border: none;
+  box-shadow: none;
+}
+
+.product__gift-wrapper {
+  max-width: 100%;
+}
+
+.product__gift-wrapper .select__select {
+  background-color: #EFEEE3;
+}
+
+.thumbnail[aria-current] {
+  border: 1px solid rgba(131, 131, 82, .75)!important;
+  box-shadow: none!important;
+}
+
+.product__custom-accordion.accordion details[open]>summary .icon-caret {
+  transform: none!important;
+}
+
+.product__custom-accordion.accordion .summary__title+.icon-caret {
+  color: var(--color-main);
+  height: 1rem!important;
+}
+
+/* price-product.liquid */
+.price__product {
+  text-align: right;
+}
+
+.price__product-item {
+  font-size: 3.2rem;
+  letter-spacing: .15rem;
+}
+
+.price__product-tax {
+  color: var(--color-main);
+  font-size: 1.2rem;
+  margin-left: -5px;
+}
+
+.product__tax-caption {
+  text-align: right;
+}
+
+/* buy-buttons.liquid */
+.product-form__buttons.custom {
+  max-width: 100%;
+}

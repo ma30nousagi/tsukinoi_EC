@@ -13,12 +13,14 @@
 
 .page-heading--title {
   font-size: 2.8rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .page-heading--title .subtitle {
   color: var(--color-main);
   display: block;
+  font-size: 1.6rem;
+  margin-top: .8rem;
 }
 
 .guide_box h3 {
@@ -63,4 +65,14 @@
 .field__label {
   color: #c3c3c3;
   font-size: 1.4rem;
+}
+
+/* main-cart.liquid */
+.quantity__cart::after {
+  border: 1px solid rgba(131, 131, 82, .75)!important;
+  box-shadow: none;
+}
+
+.quantity__cart svg {
+  color: #838352!important;
 }

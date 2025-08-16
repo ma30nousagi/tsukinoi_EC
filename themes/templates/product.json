@@ -3,12 +3,9 @@
     "main": {
       "type": "custom-main-product",
       "blocks": {
-        "text_pNpHJm": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "body"
-          }
+        "product_vendor_dLNhjj": {
+          "type": "product__vendor",
+          "settings": {}
         },
         "title": {
           "type": "title",
@@ -25,6 +22,10 @@
             "swatch_shape": "square"
           }
         },
+        "product_gift_APY9aC": {
+          "type": "product__gift",
+          "settings": {}
+        },
         "quantity_selector_TdtBrG": {
           "type": "quantity_selector",
           "settings": {}
@@ -32,7 +33,7 @@
         "buy_buttons_QKYiVU": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
@@ -56,10 +57,11 @@
         }
       },
       "block_order": [
-        "text_pNpHJm",
+        "product_vendor_dLNhjj",
         "title",
         "price",
         "variant_picker_cFH37X",
+        "product_gift_APY9aC",
         "quantity_selector_TdtBrG",
         "buy_buttons_QKYiVU",
         "collapsible-row-0",
@@ -67,7 +69,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-96b3b24d-0add-4d44-9cf8-562b93641a5d",
         "media_size": "small",
         "constrain_to_viewport": false,
         "media_fit": "contain",
@@ -77,30 +79,42 @@
         "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "p_t_pc": 20,
+        "p_b_pc": 60,
+        "p_t_sp": 20,
+        "p_b_sp": 40
       }
     },
     "related-products": {
-      "type": "related-products",
+      "type": "custom-related-products",
       "settings": {
-        "heading": "Other industry favorites",
-        "heading_size": "h2",
-        "products_to_show": 5,
-        "columns_desktop": 5,
+        "heading": "関連商品",
+        "products_to_show": 3,
+        "columns_desktop": 3,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
+        "show_secondary_image": true,
+        "show_vendor": true,
         "show_rating": false,
+        "p_t_pc": 40,
+        "p_b_pc": 60,
+        "p_t_sp": 40,
+        "p_b_sp": 60
+      }
+    },
+    "breadcrumbs_b9enmH": {
+      "type": "breadcrumbs",
+      "name": "パンくずリスト",
+      "settings": {
         "padding_top": 36,
-        "padding_bottom": 44
+        "padding_bottom": 36
       }
     }
   },
   "order": [
+    "breadcrumbs_b9enmH",
     "main",
     "related-products"
   ]
