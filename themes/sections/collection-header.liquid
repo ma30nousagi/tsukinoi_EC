@@ -1,0 +1,103 @@
+{%- style -%}
+  .collection__heading {
+    margin: 0 0 3rem;
+    text-align: center;
+  }
+
+  .collection__heading .sub_title {
+    color: var(--color-main);
+    display: block;
+    font-size: 1.6rem;
+    margin-top: .8rem;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.p_t_sp }}px;
+    padding-bottom: {{ section.settings.p_b_sp }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.p_t_pc }}px;
+      padding-bottom: {{ section.settings.p_b_pc }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<section class="collection__header section-{{ section.id }}-padding">
+  <div class="page-width">
+    <h1 class="collection__heading page-heading--title">
+      {{- collection.title -}}
+      <span class="sub_title">
+        {%- if collection.metafields.custom.sub_title != blank -%}
+          {{ collection.metafields.custom.sub_title }}
+        {%- else -%}
+          Collection
+        {%- endif -%}
+      </span>
+    </h1>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "コレクションヘッダー",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": "PC画面のセッティング"
+      },
+      {
+        "type": "range",
+        "id": "p_t_pc",
+        "label": "セクション上の余白",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 4
+      },
+      {
+        "type": "range",
+        "id": "p_b_pc",
+        "label": "セクション下の余白",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 4
+      },
+      {
+        "type": "header",
+        "content": "SP画面のセッティング"
+      },
+      {
+        "type": "range",
+        "id": "p_t_sp",
+        "label": "セクション上の余白",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 4
+      },
+      {
+        "type": "range",
+        "id": "p_b_sp",
+        "label": "セクション下の余白",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 4
+      }
+    ],
+    "presets": [
+      {
+        "name": "コレクションヘッダー"
+      }
+    ]
+  }
+{% endschema %}

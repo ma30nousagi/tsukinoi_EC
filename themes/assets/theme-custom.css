@@ -16,7 +16,7 @@
   font-weight: 600;
 }
 
-.page-heading--title .subtitle {
+.page-heading--title .sub_title {
   color: var(--color-main);
   display: block;
   font-size: 1.6rem;

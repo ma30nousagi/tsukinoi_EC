@@ -1,14 +1,5 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
-      "disabled": true,
-      "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "scheme-1"
-      }
-    },
     "page_header_KfcLGa": {
       "type": "page-header",
       "name": "ページヘッダー",
@@ -24,8 +15,33 @@
         "p_b_sp": 20
       }
     },
+    "collection_header_Nnhjrm": {
+      "type": "collection-header",
+      "name": "コレクションヘッダー",
+      "settings": {
+        "p_t_pc": 60,
+        "p_b_pc": 20,
+        "p_t_sp": 40,
+        "p_b_sp": 20
+      }
+    },
+    "banner": {
+      "type": "custom-collection-banner",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_vendor": true,
+        "show_collection_image": true,
+        "set_collection_image": "shopify:\/\/shop_images\/S4R4489.jpg",
+        "pickup_description": "<p>季節の商品説明が入ります。季節の商品説明が入ります。季節の商品説明が入ります。<\/p><p>季節の商品説明が入ります。季節の商品説明が入ります。季節の商品説明が入ります。季節の商品説明が入ります。<\/p>",
+        "selected_product": "wano-tsuki",
+        "p_t_pc": 20,
+        "p_b_pc": 20,
+        "p_t_sp": 20,
+        "p_b_sp": 20
+      }
+    },
     "product-grid": {
-      "type": "main-collection-product-grid",
+      "type": "custom-collection-product-grid",
       "settings": {
         "products_per_page": 12,
         "columns_desktop": 3,
@@ -36,18 +52,21 @@
         "show_secondary_image": true,
         "show_vendor": true,
         "show_rating": false,
-        "quick_add": "bulk",
-        "enable_filtering": true,
+        "quick_add": "none",
+        "enable_filtering": false,
         "filter_type": "horizontal",
         "enable_sorting": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "p_t_pc": 60,
+        "p_b_pc": 100,
+        "p_t_sp": 60,
+        "p_b_sp": 60
       }
     }
   },
   "order": [
-    "banner",
     "page_header_KfcLGa",
+    "collection_header_Nnhjrm",
+    "banner",
     "product-grid"
   ]
 }

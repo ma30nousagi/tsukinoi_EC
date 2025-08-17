@@ -417,18 +417,16 @@
               </div>
             </div>
           {%- endif -%}
+          {% comment %} 件数表示 {% endcomment %}
           <div class="product-count light" role="status">
             <h2 class="product-count__text text-body">
               <span id="ProductCountDesktop">
                 {%- if results.results_count -%}
-                  {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
+                  {{ results.results_count }}件中 {{ paginate.current_page | times: paginate.page_size | minus: paginate.page_size | plus: 1 }}-{{ paginate.current_page | times: paginate.page_size | at_most: results.results_count }}件
                 {%- elsif results.products_count == results.all_products_count -%}
-                  {{ 'products.facets.product_count_simple' | t: count: results.products_count }}
+                  {{ results.products_count }}件中 {{ paginate.current_page | times: paginate.page_size | minus: paginate.page_size | plus: 1 }}-{{ paginate.current_page | times: paginate.page_size | at_most: results.products_count }}件
                 {%- else -%}
-                  {{
-                    'products.facets.product_count'
-                    | t: product_count: results.products_count, count: results.all_products_count
-                  }}
+                  {{ results.all_products_count }}件中 {{ paginate.current_page | times: paginate.page_size | minus: paginate.page_size | plus: 1 }}-{{ paginate.current_page | times: paginate.page_size | at_most: results.products_count }}件
                 {%- endif -%}
               </span>
             </h2>

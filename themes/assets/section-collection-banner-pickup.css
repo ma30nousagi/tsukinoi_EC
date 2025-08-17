@@ -1,0 +1,93 @@
+/* custom-collection-banner.liquid */
+.collection__pickup {
+  overflow: hidden;
+}
+
+.collection__pickup .collection__pickup-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+}
+
+.collection__pickup .description {
+  margin-bottom: 3rem;
+}
+
+.collection__pickup .description p {
+  font-weight: 500;
+  line-height: 2;
+}
+
+.collection__pickup .card__content {
+  background: #EFEEE3;
+  padding: 2rem;
+}
+
+.collection__pickup .card__heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.collection__pickup .product__vendor {
+  background: var(--color-main);
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
+.collection__pickup .card__information {
+  padding: 0!important;
+}
+
+.collection__pickup .card__title {
+  color: var(--color-main);
+  font-size: 1.8rem;
+  letter-spacing: .35rem;
+  margin: 0;
+}
+
+.collection__pickup .price__container.related__price {
+  display: block!important;
+  text-align: right;
+}
+
+.collection__pickup .price__product-tax {
+  color: var(--color-main);
+  font-size: 1.2rem;
+  margin-left: -5px;
+}
+
+.collection__pickup-img {
+  overflow: hidden;
+  width: calc(50% + 50vw);
+}
+
+@media screen and (max-width: 749px) {
+  .collection__pickup .collection__pickup-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+  
+  .collection__pickup-img {
+    width: 100%;
+    order: -1;
+  }
+  
+  .collection__pickup-img {
+    width: 100%;
+    order: -1;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9のアスペクト比 */
+  }
+  
+  .collection__pickup-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
