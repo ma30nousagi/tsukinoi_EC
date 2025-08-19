@@ -1,50 +1,93 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "top_main_visual_LLM9d7": {
+      "type": "top-main-visual",
       "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Welcome industry insiders",
-            "text_style": "caption-with-letter-spacing"
-          }
-        },
-        "heading": {
+        "heading_gfYQfL": {
           "type": "heading",
           "settings": {
-            "heading": "Grow your business with us",
-            "heading_size": "h1"
+            "link": "",
+            "image_pc": "shopify:\/\/shop_images\/slider01.jpg"
           }
         },
-        "button": {
-          "type": "buttons",
+        "heading_JzykQU": {
+          "type": "heading",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "link": "",
+            "image_pc": "shopify:\/\/shop_images\/slider02.jpg"
+          }
+        },
+        "banner_small_DeP3XF": {
+          "type": "banner_small",
+          "settings": {
+            "banner_url_s": "",
+            "banner_img_s": "shopify:\/\/shop_images\/side_banner_short_05.jpg"
+          }
+        },
+        "banner_small_FgXtTK": {
+          "type": "banner_small",
+          "settings": {
+            "banner_url_s": "",
+            "banner_img_s": "shopify:\/\/shop_images\/side_banner_short_02_0212.jpg"
           }
         }
       },
       "block_order": [
-        "text",
-        "heading",
-        "button"
+        "heading_gfYQfL",
+        "heading_JzykQU",
+        "banner_small_DeP3XF",
+        "banner_small_FgXtTK"
       ],
+      "disabled": true,
+      "name": "トップスライダー",
+      "settings": {}
+    },
+    "section_banner_7hnppK": {
+      "type": "section-banner",
+      "blocks": {
+        "banner_small_w8HAkP": {
+          "type": "banner_small",
+          "settings": {
+            "banner_url_s": "shopify:\/\/collections\/all",
+            "banner_img_s": "shopify:\/\/shop_images\/slider01.jpg",
+            "banner_heading": ""
+          }
+        },
+        "banner_small_wD8nbp": {
+          "type": "banner_small",
+          "settings": {
+            "banner_url_s": "shopify:\/\/collections\/all",
+            "banner_img_s": "shopify:\/\/shop_images\/slider02.jpg",
+            "banner_heading": ""
+          }
+        },
+        "banner_small_3UVnpX": {
+          "type": "banner_small",
+          "settings": {
+            "banner_url_s": "shopify:\/\/collections\/all",
+            "banner_img_s": "shopify:\/\/shop_images\/S4R4489.jpg",
+            "banner_heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_small_w8HAkP",
+        "banner_small_wD8nbp",
+        "banner_small_3UVnpX"
+      ],
+      "name": "バナーブロック(PC横並び)",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "small",
-        "desktop_content_position": "middle-left",
-        "show_text_box": false,
-        "desktop_content_alignment": "left",
-        "color_scheme": "scheme-5",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": false
+        "color_scheme": "",
+        "title_display": false,
+        "title": "タイトル",
+        "sub_title": "英語見出し",
+        "columns_pc": 3,
+        "columns_space_pc": 20,
+        "columns_space_sp": 20,
+        "p_t_pc": 20,
+        "p_b_pc": 20,
+        "p_t_sp": 20,
+        "p_b_sp": 20
       }
     },
     "multicolumn": {
@@ -118,11 +161,11 @@
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
         "columns_desktop": 6,
         "column_alignment": "center",
         "background_style": "none",
-        "button_label": "",
-        "button_link": "",
         "color_scheme": "scheme-2",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
@@ -155,18 +198,18 @@
     "featured_collection1": {
       "type": "featured-collection",
       "settings": {
+        "collection": "",
+        "products_to_show": 10,
         "title": "Proven bestsellers",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "",
-        "products_to_show": 10,
         "columns_desktop": 5,
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
         "color_scheme": "",
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -285,11 +328,11 @@
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
         "columns_desktop": 4,
         "column_alignment": "center",
         "background_style": "none",
-        "button_label": "",
-        "button_link": "",
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
@@ -300,18 +343,18 @@
     "featured_collection2": {
       "type": "featured-collection",
       "settings": {
+        "collection": "",
+        "products_to_show": 6,
         "title": "New arrivals",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "",
-        "products_to_show": 6,
         "columns_desktop": 5,
+        "enable_desktop_slider": true,
         "full_width": false,
         "show_view_all": false,
         "view_all_style": "solid",
-        "enable_desktop_slider": true,
         "color_scheme": "",
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -376,27 +419,87 @@
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
         "columns_desktop": 4,
         "column_alignment": "left",
         "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
         "color_scheme": "scheme-3",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 48
       }
+    },
+    "featured_blog_EQ3AFQ": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "ブログ記事",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "top_grid_banner_text_k8XRQN": {
+      "type": "top-grid-banner-text",
+      "name": "トップ画像+テキスト+ボタン",
+      "settings": {
+        "color_scheme": "",
+        "show_collection_image": true,
+        "set_collection_image": "shopify:\/\/shop_images\/S4R4422.jpg",
+        "grid_en_title": "A B O U T",
+        "grid_description": "<p>日本民謡「磯節」の発祥の地、大洗町(当時の磯浜)。<br\/>ここで「松前屋」の称号で酒造りを始めて漁舟の出舟、入舟に欠かせない祝い酒として愛飲されたのが月の井であり、また月の井を飲みながら歌われたのが磯節でした。<br\/>この「月の井」の酒名の由来は、磯節の中の一節にある　『波の背に乗る秋の月』　という文句のとおり、中秋の名月の光を磯に砕ける波頭に受け、金波、銀波に輝く様が実に見事で、その月景にあやかって名付けたと言われています。<\/p>",
+        "show_link_button": true,
+        "grid_link": "",
+        "grid_link_text": "コーポレートサイト",
+        "p_t_pc": 20,
+        "p_b_pc": 20,
+        "p_t_sp": 20,
+        "p_b_sp": 20
+      }
+    },
+    "top_grid_banner_text_left_ThtmkY": {
+      "type": "top-grid-banner-text-left",
+      "name": "トップ画像+テキスト+ボタン（左画像）",
+      "settings": {
+        "color_scheme": "",
+        "show_collection_image": true,
+        "set_collection_image": "shopify:\/\/shop_images\/S4R3538.jpg",
+        "grid_en_title": "P R O D U C T",
+        "grid_description": "<p>日本酒は、自然の恵みである米と水を原料とし、微生物の発酵によって生みだされます。<br\/>一見シンプルに思えますが、生産工程は多様かつ繊細。<br\/>わずかな変化がお酒の仕上がりに大きな影響を与えます。<br\/>そのため現代の酒造りにおいては、事前に目指すお酒の味や香りを決め、生産工程を緻密に組み立てる酒質設計が最重要とされています。<br\/>月の井酒造店では、この現代の常識である酒質設計をおこないません。<br\/>ワインの世界に、「その土地の味」を意味するテロワールという言葉があります。<br\/>畑によって生じる味わいや品質の違いをその土地の個性と捉え、おいしさを語る上で重要なキーワードとなっています。<br\/>また、野菜はハウスなどの施設栽培よりも、青空の下で旬に合わせて育てる露地栽培の方が味がよいとされています。<br\/>自然と向き合いながら思いのままに育った方が、旨味が出やすいといわれているのです。<\/p>",
+        "show_link_button": true,
+        "grid_link_1": "https:\/\/tsukinoi.co.jp\/shop_list\/",
+        "grid_link_text_1": "取扱店舗一覧",
+        "grid_link_2": "shopify:\/\/collections\/all",
+        "grid_link_text_2": "商品一覧",
+        "p_t_pc": 20,
+        "p_b_pc": 60,
+        "p_t_sp": 20,
+        "p_b_sp": 20
+      }
     }
   },
   "order": [
-    "image_banner",
+    "top_main_visual_LLM9d7",
+    "section_banner_7hnppK",
     "multicolumn",
     "rich_text",
     "featured_collection1",
     "collection_list",
     "multicolumn1",
     "featured_collection2",
-    "multicolumn2"
+    "multicolumn2",
+    "featured_blog_EQ3AFQ",
+    "top_grid_banner_text_k8XRQN",
+    "top_grid_banner_text_left_ThtmkY"
   ]
 }

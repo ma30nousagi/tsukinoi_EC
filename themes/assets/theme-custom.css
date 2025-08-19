@@ -76,3 +76,14 @@
 .quantity__cart svg {
   color: #838352!important;
 }
+
+/* policy page */
+.shopify-policy__container {
+  max-width: 850px!important;
+  margin: 0 auto;
+  padding: 60px 20px 100px!important;
+}
+
+.shopify-policy__container h1 {
+  font-size: 2.8rem;
+}

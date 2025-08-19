@@ -1,0 +1,234 @@
+{%- style -%}
+  .section__banner-wrapper {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_pc }}, 1fr);
+    grid-gap: {{ section.settings.columns_space_pc }}px;
+    width: 100%;
+  }
+  
+  .section__banner-heading {
+    font-weight: 600;
+    margin: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.p_t_sp }}px;
+    padding-bottom: {{ section.settings.p_b_sp }}px;
+  }
+  
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.p_t_pc }}px;
+      padding-bottom: {{ section.settings.p_b_pc }}px;
+    }
+  }
+  
+  @media screen and (max-width: 749px) {
+    .section__banner-wrapper {
+      grid-template-columns: 1fr;
+      gap: {{ section.settings.columns_space_sp }}px;
+    }
+  }
+
+  /* バナー画像の比率を3:2に固定 */
+  .section__banner--link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  .section__banner--link::before {
+    content: '';
+    display: block;
+    padding-bottom: 66.67%; /* 3:2の比率 (2/3 * 100 = 66.67%) */
+  }
+
+  .section__banner--link:hover {
+    opacity: 0.8;
+  }
+
+  .section__banner--link .media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+{%- endstyle -%}
+<div class="section-banner color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- if section.settings.title_display == true -%}
+      <header class="section-header">
+        <h2 class="page-heading--title">
+          {{ section.settings.title }}
+          <span class="sub_title">{{ section.settings.sub_title }}</span>
+        </h2>
+      </header>
+    {%- endif -%}
+    <div class="section__banner-wrapper">
+      {%- for block in section.blocks -%}
+        <a href="{{ block.settings.banner_url_s }}" class="section__banner--link">
+          <img src="{{ block.settings.banner_img_s |  img_url: 'master' | loading: 'lazy' }}" alt="バナー" class="media">
+          {%- if block.settings.banner_heading != blank -%}
+          <h3 class="section__banner-heading">{{ block.settings.banner_heading }}</h3>
+          {%- endif -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "バナー(PC横配置)",
+  "class": "banner",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_display",
+      "label": "セクションタイトルの表示",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "セクションタイトル",
+      "default": "タイトル"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "英語見出し",
+      "default": "英語見出し"
+    },
+    {
+      "type": "header",
+      "content": "PC画面のセッティング"
+    },
+    {
+      "type": "range",
+      "id": "columns_pc",
+      "label": "PC表示数",
+      "default": 2,
+      "min": 1,
+      "max": 3,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "columns_space_pc",
+      "label": "バナー間のスペースPC(px)",
+      "default": 20,
+      "min": 0,
+      "max": 40,
+      "step": 4
+    },
+    {
+      "type": "header",
+      "content": "SP画面のセッティング(749px以下は1カラム表示)"
+    },
+    {
+      "type": "range",
+      "id": "columns_space_sp",
+      "label": "バナー間のスペースSP(px)",
+      "default": 20,
+      "min": 0,
+      "max": 40,
+      "step": 4
+    },
+    {
+      "type": "header",
+      "content": "PC画面のセッティング"
+    },
+    {
+      "type": "range",
+      "id": "p_t_pc",
+      "label": "セクション上の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "range",
+      "id": "p_b_pc",
+      "label": "セクション下の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "header",
+      "content": "SP画面のセッティング"
+    },
+    {
+      "type": "range",
+      "id": "p_t_sp",
+      "label": "セクション上の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "range",
+      "id": "p_b_sp",
+      "label": "セクション下の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    }  
+  ],
+  "blocks": [
+    {
+      "type": "banner_small",
+      "name": "バナーカラム表示",
+      "settings": [
+        {
+          "type": "url",
+          "id": "banner_url_s",
+          "label": "リンク先の指定"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img_s",
+          "label": "バナーを選択してください"
+        },
+        {
+          "type": "text",
+          "id": "banner_heading",
+          "label": "バナー下のタイトル（タイトル空白の場合は表示されません）",
+          "default": "タイトルが入ります"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "バナーブロック(PC横並び)",
+      "blocks": [
+        {
+          "type": "banner_small"
+        },
+        {
+          "type": "banner_small"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

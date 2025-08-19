@@ -1,0 +1,222 @@
+{{ 'section-top-grid-banner-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.p_t_sp }}px;
+    padding-bottom: {{ section.settings.p_b_sp }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.p_t_pc }}px;
+      padding-bottom: {{ section.settings.p_b_pc }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="top__grid-banner section-{{ section.id }}-padding color-{{ section.settings.color_scheme }} gradient">
+  <div class="section-{{ section.id }}-padding">
+    <div class="page-width">
+      <div class="top__grid-banner-wrapper">
+        <div class="top__grid-banner-content-inner">
+          <span class="top__grid-en_title">
+            {{ section.settings.grid_en_title }}
+          </span>
+          <h2 class="top__grid-title">
+            日本民謡「磯節」の発祥の地、<br>
+            大洗町で「月の井」は生まれました。
+          </h2>
+          <div class="top__grid-description">
+            {{ section.settings.grid_description }}
+          </div>
+          {%- if section.settings.show_link_button -%}
+            <div class="button__wrapper">
+              <a href="{{ section.settings.grid_link }}" class="button__base">
+                {{ section.settings.grid_link_text }}
+              </a>
+            </div>
+            <div class="sns_icon-wrapper">
+              <ul class="list-unstyled list-social" role="list">
+                {%- if settings.social_instagram_link != blank -%}
+                  <li class="list-social__item">
+                    <a href="{{ settings.social_instagram_link }}" class="link list-social__link">
+                      <span class="svg-wrapper">
+                        {{- 'icon-instagram.svg' | inline_asset_content -}}
+                      </span>
+                      <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+                {%- if settings.social_facebook_link != blank -%}
+                  <li class="list-social__item">
+                    <a href="{{ settings.social_facebook_link }}" class="link list-social__link">
+                      <span class="svg-wrapper">
+                        {{- 'icon-facebook.svg' | inline_asset_content -}}
+                      </span>
+                      <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+                {%- if settings.social_twitter_link != blank -%}
+                  <li class="list-social__item">
+                    <a href="{{ settings.social_twitter_link }}" class="link list-social__link">
+                      <span class="svg-wrapper">
+                        {{- 'icon-twitter.svg' | inline_asset_content -}}
+                      </span>
+                      <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+                {%- if settings.social_youtube_link != blank -%}
+                  <li class="list-social__item">
+                    <a href="{{ settings.social_youtube_link }}" class="link list-social__link">
+                      <span class="svg-wrapper">
+                        {{- 'icon-youtube.svg' | inline_asset_content -}}
+                      </span>
+                      <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+                {%- if settings.social_tiktok_link != blank -%}
+                  <li class="list-social__item">
+                    <a href="{{ settings.social_tiktok_link }}" class="link list-social__link">
+                      <span class="svg-wrapper">
+                        {{- 'icon-tiktok.svg' | inline_asset_content -}}
+                      </span>
+                      <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+                    </a>
+                  </li>
+                {%- endif -%}
+              </ul>
+            </div>
+          {%- endif -%}
+        </div>
+        {%- if section.settings.show_collection_image and section.settings.set_collection_image -%}
+          <div class="top__grid-img">
+            <img
+              srcset="
+                {%- if section.settings.set_collection_image.width >= 165 -%}{{ section.settings.set_collection_image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if section.settings.set_collection_image.width >= 360 -%}{{ section.settings.set_collection_image | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if section.settings.set_collection_image.width >= 535 -%}{{ section.settings.set_collection_image | image_url: width: 535 }} 535w,{%- endif -%}
+                {%- if section.settings.set_collection_image.width >= 750 -%}{{ section.settings.set_collection_image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if section.settings.set_collection_image.width >= 1070 -%}{{ section.settings.set_collection_image | image_url: width: 1070 }} 1070w,{%- endif -%}
+                {%- if section.settings.set_collection_image.width >= 1500 -%}{{ section.settings.set_collection_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {{ section.settings.set_collection_image | image_url }} {{ section.settings.set_collection_image.width }}w
+              "
+              src="{{ section.settings.set_collection_image | image_url: width: 750 }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), 100vw"
+              alt="{{ section.settings.set_collection_image.alt | escape }}"
+              width="{{ section.settings.set_collection_image.width }}"
+              height="{{ section.settings.set_collection_image.height }}"
+              style="aspect-ratio: {{ section.settings.set_collection_image.width }} / {{ section.settings.set_collection_image.height }};"
+            >
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "トップ画像+テキスト+ボタン（右画像）",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "set_collection_image",
+      "label": "画像の挿入"
+    },
+    {
+      "type": "text",
+      "id": "grid_en_title",
+      "label": "英語見出し",
+      "default": "ABOUT"
+    },
+    {
+      "type": "richtext",
+      "id": "grid_description",
+      "label": "説明",
+      "default": "<p>テキストが入ります。</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_link_button",
+      "default": true,
+      "label": "リンクボタンの表示"
+    },
+    {
+      "type": "url",
+      "id": "grid_link",
+      "label": "遷移先URL"
+    },
+    {
+      "type": "text",
+      "id": "grid_link_text",
+      "label": "ボタンのテキスト",
+      "default": "コーポレートサイト"
+    },
+    {
+      "type": "header",
+      "content": "PC画面のセッティング"
+    },
+    {
+      "type": "range",
+      "id": "p_t_pc",
+      "label": "セクション上の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "range",
+      "id": "p_b_pc",
+      "label": "セクション下の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "header",
+      "content": "SP画面のセッティング"
+    },
+    {
+      "type": "range",
+      "id": "p_t_sp",
+      "label": "セクション上の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "range",
+      "id": "p_b_sp",
+      "label": "セクション下の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "トップ画像+テキスト+ボタン（右画像）"
+    }
+  ]
+}
+{% endschema %}

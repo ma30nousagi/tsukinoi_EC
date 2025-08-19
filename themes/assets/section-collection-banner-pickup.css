@@ -1,4 +1,6 @@
+/* **************************************** */
 /* custom-collection-banner.liquid */
+/* **************************************** */
 .collection__pickup {
   overflow: hidden;
 }
@@ -61,18 +63,13 @@
 
 .collection__pickup-img {
   overflow: hidden;
-  width: calc(50% + 50vw);
+  width: calc(50% + 35vw);
 }
 
 @media screen and (max-width: 749px) {
   .collection__pickup .collection__pickup-wrapper {
     grid-template-columns: 1fr;
     gap: 1.6rem;
-  }
-  
-  .collection__pickup-img {
-    width: 100%;
-    order: -1;
   }
   
   .collection__pickup-img {

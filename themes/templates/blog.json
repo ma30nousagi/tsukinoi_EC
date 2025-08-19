@@ -1,15 +1,19 @@
 {
   "sections": {
     "main": {
-      "type": "main-blog",
+      "type": "custom-main-blog",
       "settings": {
         "layout": "grid",
         "show_image": true,
-        "image_height": "small",
+        "image_height": "medium",
         "show_date": true,
+        "show_excerpt": false,
         "show_author": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "articles_per_page": 6,
+        "p_t_pc": 20,
+        "p_b_pc": 100,
+        "p_t_sp": 20,
+        "p_b_sp": 80
       }
     }
   },
