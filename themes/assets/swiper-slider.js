@@ -6,7 +6,7 @@ const mvSwiper = new Swiper('.mv-swiper', {
   spaceBetween: 0,
 
   autoplay: {
-      delay: 3000,
+      delay: 4000,
   },
 
   // If we need pagination

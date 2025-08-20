@@ -7,40 +7,42 @@
           "type": "heading",
           "settings": {
             "link": "",
-            "image_pc": "shopify:\/\/shop_images\/slider01.jpg"
+            "image_noimg": "shopify:\/\/shop_images\/slider01.jpg",
+            "image_pc": "shopify:\/\/shop_images\/slider01.jpg",
+            "image_sp": "shopify:\/\/shop_images\/slider01.jpg"
           }
         },
         "heading_JzykQU": {
           "type": "heading",
           "settings": {
             "link": "",
-            "image_pc": "shopify:\/\/shop_images\/slider02.jpg"
+            "image_pc": "shopify:\/\/shop_images\/slider02.jpg",
+            "image_sp": "shopify:\/\/shop_images\/slider02.jpg"
           }
         },
-        "banner_small_DeP3XF": {
-          "type": "banner_small",
+        "banner_89wQ4f": {
+          "type": "banner",
+          "disabled": true,
           "settings": {
-            "banner_url_s": "",
-            "banner_img_s": "shopify:\/\/shop_images\/side_banner_short_05.jpg"
-          }
-        },
-        "banner_small_FgXtTK": {
-          "type": "banner_small",
-          "settings": {
-            "banner_url_s": "",
-            "banner_img_s": "shopify:\/\/shop_images\/side_banner_short_02_0212.jpg"
+            "banner_url_s_1": "",
+            "banner_img_s_1": "shopify:\/\/shop_images\/side_banner_short_02_0212.jpg",
+            "banner_url_s_2": "",
+            "banner_img_s_2": "shopify:\/\/shop_images\/side_banner_short_05.jpg"
           }
         }
       },
       "block_order": [
         "heading_gfYQfL",
         "heading_JzykQU",
-        "banner_small_DeP3XF",
-        "banner_small_FgXtTK"
+        "banner_89wQ4f"
       ],
-      "disabled": true,
       "name": "トップスライダー",
-      "settings": {}
+      "settings": {
+        "banner_img_s_1": "shopify:\/\/shop_images\/side_banner_short_02_0212.jpg",
+        "banner_url_s_1": "",
+        "banner_img_s_2": "shopify:\/\/shop_images\/side_banner_short_05.jpg",
+        "banner_url_s_2": ""
+      }
     },
     "section_banner_7hnppK": {
       "type": "section-banner",
@@ -49,24 +51,21 @@
           "type": "banner_small",
           "settings": {
             "banner_url_s": "shopify:\/\/collections\/all",
-            "banner_img_s": "shopify:\/\/shop_images\/slider01.jpg",
-            "banner_heading": ""
+            "banner_img_s": "shopify:\/\/shop_images\/slider01.jpg"
           }
         },
         "banner_small_wD8nbp": {
           "type": "banner_small",
           "settings": {
             "banner_url_s": "shopify:\/\/collections\/all",
-            "banner_img_s": "shopify:\/\/shop_images\/slider02.jpg",
-            "banner_heading": ""
+            "banner_img_s": "shopify:\/\/shop_images\/slider02.jpg"
           }
         },
         "banner_small_3UVnpX": {
           "type": "banner_small",
           "settings": {
             "banner_url_s": "shopify:\/\/collections\/all",
-            "banner_img_s": "shopify:\/\/shop_images\/S4R4489.jpg",
-            "banner_heading": ""
+            "banner_img_s": "shopify:\/\/shop_images\/S4R4489.jpg"
           }
         }
       },
@@ -84,369 +83,32 @@
         "columns_pc": 3,
         "columns_space_pc": 20,
         "columns_space_sp": 20,
+        "p_t_pc": 60,
+        "p_b_pc": 60,
+        "p_t_sp": 60,
+        "p_b_sp": 60
+      }
+    },
+    "top_subscription_VX4Mbx": {
+      "type": "top-subscription",
+      "name": "TOPページ_サブスクリプション",
+      "settings": {
+        "color_scheme": "",
+        "title_display": true,
+        "head_img": "shopify:\/\/shop_images\/S4R2896.jpg",
+        "height_top": 40,
+        "height_bottom": 40,
+        "height_top_sp": 100,
+        "height_bottom_sp": 50,
+        "description": "<p>地元一貫造りの新ブランド<br\/>「彦市」をご自宅で<\/p>",
+        "title": "月の井の頒布会",
+        "sub_title": "SUBSCRIPTION",
+        "link": "shopify:\/\/pages\/subscription",
+        "btn_text": "お申し込み",
         "p_t_pc": 20,
         "p_b_pc": 20,
         "p_t_sp": 20,
         "p_b_sp": 20
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column1": {
-          "type": "column",
-          "settings": {
-            "title": "Insert partner logo",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Insert partner logo",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Insert partner logo",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column4": {
-          "type": "column",
-          "settings": {
-            "title": "Insert partner logo",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column5": {
-          "type": "column",
-          "settings": {
-            "title": "Insert partner logo",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column6": {
-          "type": "column",
-          "settings": {
-            "title": "Insert partner logo",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3",
-        "column4",
-        "column5",
-        "column6"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 6,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "scheme-2",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 12,
-        "padding_bottom": 12
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Outstanding service | Exclusive pricing | Industry expertise<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "full_width": true,
-        "padding_top": 4,
-        "padding_bottom": 4
-      }
-    },
-    "featured_collection1": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "",
-        "products_to_show": 10,
-        "title": "Proven bestsellers",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 5,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "bulk",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 52
-      }
-    },
-    "collection_list": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection3": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection4": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection5": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection1",
-        "featured_collection2",
-        "featured_collection3",
-        "featured_collection4",
-        "featured_collection5"
-      ],
-      "settings": {
-        "title": "Shop our top categories",
-        "heading_size": "h2",
-        "image_ratio": "square",
-        "columns_desktop": 5,
-        "color_scheme": "scheme-4",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 48,
-        "padding_bottom": 60
-      }
-    },
-    "multicolumn1": {
-      "type": "multicolumn",
-      "blocks": {
-        "column7": {
-          "type": "column",
-          "settings": {
-            "title": "Add a customer testimonial",
-            "text": "",
-            "link_label": "Shop now",
-            "link": ""
-          }
-        },
-        "column8": {
-          "type": "column",
-          "settings": {
-            "title": "Add a customer testimonial",
-            "text": "",
-            "link_label": "Shop now",
-            "link": ""
-          }
-        },
-        "column9": {
-          "type": "column",
-          "settings": {
-            "title": "Add a customer testimonial",
-            "text": "",
-            "link_label": "Shop now",
-            "link": ""
-          }
-        },
-        "column10": {
-          "type": "column",
-          "settings": {
-            "title": "Add a customer testimonial",
-            "text": "",
-            "link_label": "Shop now",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column7",
-        "column8",
-        "column9",
-        "column10"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 4,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "padding_top": 68,
-        "padding_bottom": 68
-      }
-    },
-    "featured_collection2": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "",
-        "products_to_show": 6,
-        "title": "New arrivals",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 5,
-        "enable_desktop_slider": true,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "bulk",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 52
-      }
-    },
-    "multicolumn2": {
-      "type": "multicolumn",
-      "blocks": {
-        "column11": {
-          "type": "column",
-          "settings": {
-            "title": "Add educational content",
-            "text": "<p>Provide content for your customers that sets their business up for success<\/p>",
-            "link_label": "Read now",
-            "link": ""
-          }
-        },
-        "column12": {
-          "type": "column",
-          "settings": {
-            "title": "Add educational content",
-            "text": "<p>Provide content for your customers that sets their business up for success<\/p>",
-            "link_label": "Read now",
-            "link": ""
-          }
-        },
-        "column13": {
-          "type": "column",
-          "settings": {
-            "title": "Add educational content",
-            "text": "<p>Provide content for your customers that sets their business up for success<\/p>",
-            "link_label": "Read now",
-            "link": ""
-          }
-        },
-        "column14": {
-          "type": "column",
-          "settings": {
-            "title": "Add educational content",
-            "text": "<p>Provide content for your customers that sets their business up for success<\/p>",
-            "link_label": "Read now",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column11",
-        "column12",
-        "column13",
-        "column14"
-      ],
-      "settings": {
-        "title": "You're set up for success",
-        "heading_size": "h2",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "color_scheme": "scheme-3",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 48
-      }
-    },
-    "featured_blog_EQ3AFQ": {
-      "type": "featured-blog",
-      "name": "t:sections.featured-blog.presets.name",
-      "settings": {
-        "blog": "news",
-        "post_limit": 3,
-        "heading": "ブログ記事",
-        "heading_size": "h1",
-        "columns_desktop": 3,
-        "show_view_all": true,
-        "show_image": true,
-        "show_date": true,
-        "show_author": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "top_grid_banner_text_k8XRQN": {
@@ -456,7 +118,7 @@
         "color_scheme": "",
         "show_collection_image": true,
         "set_collection_image": "shopify:\/\/shop_images\/S4R4422.jpg",
-        "grid_en_title": "A B O U T",
+        "grid_en_title": "ABOUT",
         "grid_description": "<p>日本民謡「磯節」の発祥の地、大洗町(当時の磯浜)。<br\/>ここで「松前屋」の称号で酒造りを始めて漁舟の出舟、入舟に欠かせない祝い酒として愛飲されたのが月の井であり、また月の井を飲みながら歌われたのが磯節でした。<br\/>この「月の井」の酒名の由来は、磯節の中の一節にある　『波の背に乗る秋の月』　という文句のとおり、中秋の名月の光を磯に砕ける波頭に受け、金波、銀波に輝く様が実に見事で、その月景にあやかって名付けたと言われています。<\/p>",
         "show_link_button": true,
         "grid_link": "",
@@ -474,7 +136,7 @@
         "color_scheme": "",
         "show_collection_image": true,
         "set_collection_image": "shopify:\/\/shop_images\/S4R3538.jpg",
-        "grid_en_title": "P R O D U C T",
+        "grid_en_title": "PRODUCT",
         "grid_description": "<p>日本酒は、自然の恵みである米と水を原料とし、微生物の発酵によって生みだされます。<br\/>一見シンプルに思えますが、生産工程は多様かつ繊細。<br\/>わずかな変化がお酒の仕上がりに大きな影響を与えます。<br\/>そのため現代の酒造りにおいては、事前に目指すお酒の味や香りを決め、生産工程を緻密に組み立てる酒質設計が最重要とされています。<br\/>月の井酒造店では、この現代の常識である酒質設計をおこないません。<br\/>ワインの世界に、「その土地の味」を意味するテロワールという言葉があります。<br\/>畑によって生じる味わいや品質の違いをその土地の個性と捉え、おいしさを語る上で重要なキーワードとなっています。<br\/>また、野菜はハウスなどの施設栽培よりも、青空の下で旬に合わせて育てる露地栽培の方が味がよいとされています。<br\/>自然と向き合いながら思いのままに育った方が、旨味が出やすいといわれているのです。<\/p>",
         "show_link_button": true,
         "grid_link_1": "https:\/\/tsukinoi.co.jp\/shop_list\/",
@@ -486,19 +148,54 @@
         "p_t_sp": 20,
         "p_b_sp": 20
       }
+    },
+    "section_banner_brand_bbUCrT": {
+      "type": "section-banner-brand",
+      "blocks": {
+        "banner_small_PKqjLw": {
+          "type": "banner_small",
+          "settings": {
+            "banner_url_s": "shopify:\/\/collections\/tsukinoi",
+            "banner_img_s": "shopify:\/\/shop_images\/slider01.jpg",
+            "banner_heading": "月の井",
+            "description": "全国から厳選した米で造る最上の地酒『月の井』"
+          }
+        },
+        "banner_small_3mHLHW": {
+          "type": "banner_small",
+          "settings": {
+            "banner_url_s": "shopify:\/\/collections\/wano-tsuki",
+            "banner_img_s": "shopify:\/\/shop_images\/slider02.jpg",
+            "banner_heading": "和の月（オーガニック）",
+            "description": "究極の有機のお酒『和の月』"
+          }
+        }
+      },
+      "block_order": [
+        "banner_small_PKqjLw",
+        "banner_small_3mHLHW"
+      ],
+      "name": "バナーブロック(BRAND)",
+      "settings": {
+        "color_scheme": "",
+        "title_display": true,
+        "title": "月の井のブランド",
+        "sub_title": "BRAND",
+        "columns_pc": 2,
+        "columns_space_pc": 32,
+        "columns_space_sp": 20,
+        "p_t_pc": 60,
+        "p_b_pc": 60,
+        "p_t_sp": 60,
+        "p_b_sp": 60
+      }
     }
   },
   "order": [
     "top_main_visual_LLM9d7",
     "section_banner_7hnppK",
-    "multicolumn",
-    "rich_text",
-    "featured_collection1",
-    "collection_list",
-    "multicolumn1",
-    "featured_collection2",
-    "multicolumn2",
-    "featured_blog_EQ3AFQ",
+    "section_banner_brand_bbUCrT",
+    "top_subscription_VX4Mbx",
     "top_grid_banner_text_k8XRQN",
     "top_grid_banner_text_left_ThtmkY"
   ]

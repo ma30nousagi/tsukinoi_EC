@@ -11,9 +11,10 @@
   gap: 3.2rem;
 }
 
-.top__grid-banner .top__grid-en_title {
+.top__grid-banner .sub_title {
   color: var(--color-main);
   font-size: 1.6rem;
+  letter-spacing: 0.15em;
 }
 
 .top__grid-banner .top__grid-title {
@@ -104,37 +105,15 @@
 /* **************************************** */
 /* top-grid-banner-text-left.liquid */
 /* **************************************** */
-.top__grid-banner_left {
-  overflow: hidden;
-}
 
-.top__grid-banner_left .top__grid-banner-wrapper {
+
+ .top__grid-banner.left .top__grid-banner-wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3.2rem;
 }
 
-.top__grid-banner_left .top__grid-en_title {
-  color: var(--color-main);
-  font-size: 1.6rem;
-}
-
-.top__grid-banner_left .top__grid-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-}
-
-.top__grid-banner_left .top__grid-description {
-  margin-bottom: 3rem;
-}
-
-.top__grid-banner_left .top__grid-description p {
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 2;
-}
-
-.top__grid-banner_left .top__grid-img {
+.top__grid-banner.left .top__grid-img {
   overflow: hidden;
   position: relative;
   width: 60vw;
@@ -143,23 +122,14 @@
   height: 500px;
 }
 
-.top__grid-banner_left .top__grid-img img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.top__grid-banner_left .button__wrapper {
+.top__grid-banner.left .button__wrapper {
   display: flex;
   align-items: center;
   gap: 3rem;
-}
+} 
 
 @media screen and (min-width: 1500px) {
-  .top__grid-banner_left .top__grid-img {
+  .top__grid-banner.left .top__grid-img {
     overflow: hidden;
     position: relative;
     width: 50vw;
@@ -169,23 +139,23 @@
 }
 
 @media screen and (max-width: 749px) {
-  .top__grid-banner_left .top__grid-banner-wrapper {
+  .top__grid-banner.left .top__grid-banner-wrapper {
     grid-template-columns: 1fr;
     gap: 1.6rem;
   }
 
-  .top__grid-banner_left .top__grid-title {
+  .top__grid-banner.left .top__grid-title {
     font-size: 2rem;
   }
   
-  .top__grid-banner_left .top__grid-img {
+  .top__grid-banner.left .top__grid-img {
     width: 100%;
     position: relative;
-    padding-bottom: 56.25%; /* 16:9のアスペクト比 */
+    padding-bottom: 56.25%;
     margin-left: 0;
   }
   
-  .top__grid-banner_left .top__grid-img img {
+  .top__grid-banner.left .top__grid-img img {
     position: absolute;
     top: 0;
     left: 0;
@@ -194,8 +164,8 @@
     object-fit: cover;
   }
 
-  .top__grid-banner_left .button__wrapper {
+  .top__grid-banner.left .button__wrapper {
     flex-direction: column;
     gap: 2rem;
-  }
+  } 
 }

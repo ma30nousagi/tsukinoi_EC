@@ -7,45 +7,99 @@
 
 {% style %}
   .top__main-visual {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .top__main-wrapper {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    overflow: hidden;
   }
-  @media screen and (min-width: 750px) {
-    .top__main-visual {
+
+  .top__main-banner--wrapper {
+    width: 100%;
+    padding: 0 5rem;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .top__main-wrapper {
       display: grid;
-      grid-template-columns: 3fr 1fr;
+      grid-template-columns: 2fr 1fr;
       gap: 2rem;
+    }
+
+    .top__main-banner--wrapper {
+      padding: 0;
     }
   }
 {% endstyle %}
 
 <section class="top__main-visual">
   <!-- Slider main container -->
-  <div class="mv-swiper">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      {%- for block in section.blocks -%}
-        <a href="{{ block.settings.link }}" class="swiper-slide">
-      <picture class="slide-img">
-        <source media="(max-width: 749px)" srcset="{{ block.settings.image_sp | img_url: 'master' }}">
-        <source media="(min-width: 750px)" srcset="{{ block.settings.image_pc | img_url: 'master' }}">            
-          <img src="{{ block.settings.image_noimg | img_url: 'master' }}" alt="image" loading="lazy">           
-      </picture>
-        </a>
-      {% endfor %}          
+  <div class="top__main-wrapper">
+    <div class="Slider">
+      <div class="mv-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          {%- for block in section.blocks -%}
+            <a href="{{ block.settings.link }}" class="swiper-slide">
+              <picture class="slide-img">
+                <source media="(max-width: 749px)" srcset="{{ block.settings.image_sp | img_url: 'master' }}">
+                <source media="(min-width: 750px)" srcset="{{ block.settings.image_pc | img_url: 'master' }}">
+                <img 
+                src="{{ block.settings.image_noimg |  img_url: 'master' }}" 
+                alt="{{ block.settings.image_noimg.alt | escape }}" 
+                class="media"
+                loading="lazy"
+                width="{{ block.settings.image_noimg.width }}"
+                height="{{ block.settings.image_noimg.height }}"
+                >
+              </picture>
+            </a>
+          {% endfor %}          
+        </div>
+      </div>
       <div class="swiper-pagination"></div>
     </div>
-  </div>
-  <div class="top__main-banner--wrapper">
-    <div class="top__main-banner">
-      {%- for block in section.blocks -%}
-        <a href="{{ block.settings.banner_url_s }}" class="top__main-banner--link">
-          <img src="{{ block.settings.banner_img_s |  img_url: 'master' | loading: 'lazy' }}" alt="バナー">
+    <div class="top__main-banner--wrapper">
+      <div class="top__main-banner">
+        <a href="{{ section.settings.banner_url_s_1 }}" class="top__main-banner--link">
+          <img 
+          src="{{ section.settings.banner_img_s_1 |  img_url: 'master' }}" 
+          alt="{{ section.settings.banner_img_s_1.alt | escape }}" 
+          class="media"
+          loading="lazy"
+          width="{{ section.settings.banner_img_s_1.width }}"
+          height="{{ section.settings.banner_img_s_1.height }}"
+          >
         </a>
-      {%- endfor -%}
-    </div>
+        <a href="{{ section.settings.banner_url_s_2 }}" class="top__main-banner--link">
+          <img 
+          src="{{ section.settings.banner_img_s_2 |  img_url: 'master' }}" 
+          alt="{{ section.settings.banner_img_s_2.alt | escape }}" 
+          class="media"
+          loading="lazy"
+          width="{{ section.settings.banner_img_s_2.width }}"
+          height="{{ section.settings.banner_img_s_2.height }}"
+          >
+        </a>
+      </div>
+    </div> 
+    {% comment %} <div class="top__main-banner--wrapper">
+      <div class="top__main-banner">
+        {%- for block in section.blocks -%}
+          <a href="{{ block.settings.banner_url_s_1 }}" class="top__main-banner--link">
+            <img src="{{ block.settings.banner_img_s_1 |  img_url: 'master' | loading: 'lazy' }}" alt="バナー">
+          </a>
+          <a href="{{ block.settings.banner_url_s_2 }}" class="top__main-banner--link">
+            <img src="{{ block.settings.banner_img_s_2 |  img_url: 'master' | loading: 'lazy' }}" alt="バナー">
+          </a>
+        {%- endfor -%} 
+      </div>
+    </div> {% endcomment %}
   </div>
 </section>
 
@@ -58,6 +112,26 @@
     {
       "type": "header",
       "content": "スライドショーの表示"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_img_s_1",
+      "label": "上段のバナー画像"
+    },
+    {
+      "type": "url",
+      "id": "banner_url_s_1",
+      "label": "上段のバナー画像"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_img_s_2",
+      "label": "下段のバナー画像"
+    },
+    {
+      "type": "url",
+      "id": "banner_url_s_2",
+      "label": "下段のバナー画像"
     }
   ],
   "blocks": [
@@ -100,18 +174,28 @@
       ]
     },
     {
-      "type": "banner_small",
+      "type": "banner",
       "name": "バナー表示",
       "settings": [
         {
           "type": "url",
-          "id": "banner_url_s",
-          "label": "リンク先の指定"
+          "id": "banner_url_s_1",
+          "label": "リンク先の指定（1枚目）"
         },
         {
           "type": "image_picker",
-          "id": "banner_img_s",
-          "label": "バナーを選択してください"
+          "id": "banner_img_s_1",
+          "label": "バナー（1枚目）"
+        },
+        {
+          "type": "url",
+          "id": "banner_url_s_2",
+          "label": "リンク先の指定（2枚目）"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img_s_2",
+          "label": "バナー（2枚目）"
         }
       ]
     }
@@ -122,6 +206,9 @@
       "blocks": [
         {
           "type": "heading"
+        },
+        {
+          "type": "banner"
         }
       ]
     }

@@ -7,11 +7,19 @@
   }
   
   .section-{{ section.id }} .section__banner-heading {
+    color: var(--color-main);
+    font-size: 1.8rem;
     font-weight: 600;
     margin: 10px 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  .section-{{ section.id }} .section__description {
+    color: var(--color-base);
+    font-size: 1.4rem;
+    margin: .8rem 0;
   }
 
   .section-{{ section.id }}-padding {
@@ -44,31 +52,10 @@
     vertical-align: bottom;
   }
 
-  /* バナー画像の比率を3:2に固定 */
-  .section-{{ section.id }} .section__banner--link {
-    position: relative;
-    display: block;
-    overflow: hidden;
-  }
-
-  .section-{{ section.id }} .section__banner--link::before {
-    content: '';
-    display: block;
-    padding-bottom: 66.67%; /* 3:2の比率 (2/3 * 100 = 66.67%) */
-  } 
-
   .section-{{ section.id }} .section__banner--link:hover {
     opacity: 0.8;
   }
 
-  .section-{{ section.id }} .section__banner--link .media {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 {%- endstyle -%}
 <div class="section-banner section-{{ section.id }} color-{{ section.settings.color_scheme }} gradient">
   <div class="page-width section-{{ section.id }}-padding">
@@ -85,12 +72,18 @@
         <a href="{{ block.settings.banner_url_s }}" class="section__banner--link">
           <img 
           src="{{ block.settings.banner_img_s |  img_url: 'master' }}" 
-          alt="{{ block.settings.banner_img_s.alt | escape }}" 
+          alt="{{ block.settings.banner_img_s.alt | escape }}"
           class="media"
           loading="lazy"
           width="{{ block.settings.banner_img_s.width }}"
           height="{{ block.settings.banner_img_s.height }}"
           >
+          {%- if block.settings.banner_heading != blank -%}
+            <h3 class="section__banner-heading">{{ block.settings.banner_heading }}</h3>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <p class="section__description">{{ block.settings.description }}</p>
+          {%- endif -%}
         </a>
       {%- endfor -%}
     </div>
@@ -98,7 +91,7 @@
 </div>
 {% schema %}
 {
-  "name": "バナー(PC横配置)",
+  "name": "バナー(BRAND)",
   "class": "banner",
   "settings": [
     {
@@ -219,17 +212,26 @@
           "type": "image_picker",
           "id": "banner_img_s",
           "label": "バナーを選択してください"
+        },
+        {
+          "type": "text",
+          "id": "banner_heading",
+          "label": "バナー下のタイトル（タイトル空白の場合は表示されません）",
+          "default": "タイトルが入ります"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "description",
+          "label": "説明文（タイトル空白の場合は表示されません）",
+          "default": "説明文"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "バナーブロック(PC横並び)",
+      "name": "バナーブロック(BRAND)",
       "blocks": [
-        {
-          "type": "banner_small"
-        },
         {
           "type": "banner_small"
         },
