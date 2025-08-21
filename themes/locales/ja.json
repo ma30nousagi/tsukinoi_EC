@@ -316,11 +316,11 @@
       "onboarding_content": "お客様にブログ記事のサマリーを提供する"
     },
     "featured_collection": {
-      "view_all": "すべてを表示する",
+      "view_all": "商品一覧を見る",
       "view_all_label": "{{ collection_name }}コレクションの商品をすべて表示する"
     },
     "collection_list": {
-      "view_all": "すべてを表示する"
+      "view_all": "商品一覧を見る"
     },
     "collection_template": {
       "title": "コレクション",

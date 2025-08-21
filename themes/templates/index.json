@@ -89,6 +89,108 @@
         "p_b_sp": 60
       }
     },
+    "custom_featured_collection_hBQEVF": {
+      "type": "custom-featured-collection",
+      "name": "カスタムコレクション(TOPページ)",
+      "settings": {
+        "collection": "recommend",
+        "products_to_show": 2,
+        "title": "おすすめ商品",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-2",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "p_t_pc": 60,
+        "p_b_pc": 60,
+        "p_t_sp": 60,
+        "p_b_sp": 60
+      }
+    },
+    "section_banner_brand_bbUCrT": {
+      "type": "section-banner-brand",
+      "blocks": {
+        "banner_small_PKqjLw": {
+          "type": "banner_small",
+          "settings": {
+            "banner_url_s": "shopify:\/\/collections\/tsukinoi",
+            "banner_img_s": "shopify:\/\/shop_images\/slider01.jpg",
+            "banner_heading": "月の井",
+            "description": "全国から厳選した米で造る最上の地酒『月の井』"
+          }
+        },
+        "banner_small_3mHLHW": {
+          "type": "banner_small",
+          "settings": {
+            "banner_url_s": "shopify:\/\/collections\/wano-tsuki",
+            "banner_img_s": "shopify:\/\/shop_images\/slider02.jpg",
+            "banner_heading": "和の月（オーガニック）",
+            "description": "究極の有機のお酒『和の月』"
+          }
+        }
+      },
+      "block_order": [
+        "banner_small_PKqjLw",
+        "banner_small_3mHLHW"
+      ],
+      "name": "バナーブロック(BRAND)",
+      "settings": {
+        "color_scheme": "",
+        "title_display": true,
+        "title": "月の井のブランド",
+        "sub_title": "BRAND",
+        "columns_pc": 2,
+        "columns_space_pc": 32,
+        "columns_space_sp": 20,
+        "p_t_pc": 60,
+        "p_b_pc": 60,
+        "p_t_sp": 60,
+        "p_b_sp": 60
+      }
+    },
+    "custom_featured_collection_ranking_LnmFmx": {
+      "type": "custom-featured-collection-ranking",
+      "name": "カスタムランキングコレクション(TOPページ)",
+      "settings": {
+        "collection": "ranking",
+        "products_to_show": 4,
+        "title": "人気商品ランキング",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_ranking_badge": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-5",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "p_t_pc": 60,
+        "p_b_pc": 60,
+        "p_t_sp": 60,
+        "p_b_sp": 60
+      }
+    },
     "top_subscription_VX4Mbx": {
       "type": "top-subscription",
       "name": "TOPページ_サブスクリプション",
@@ -148,53 +250,14 @@
         "p_t_sp": 20,
         "p_b_sp": 20
       }
-    },
-    "section_banner_brand_bbUCrT": {
-      "type": "section-banner-brand",
-      "blocks": {
-        "banner_small_PKqjLw": {
-          "type": "banner_small",
-          "settings": {
-            "banner_url_s": "shopify:\/\/collections\/tsukinoi",
-            "banner_img_s": "shopify:\/\/shop_images\/slider01.jpg",
-            "banner_heading": "月の井",
-            "description": "全国から厳選した米で造る最上の地酒『月の井』"
-          }
-        },
-        "banner_small_3mHLHW": {
-          "type": "banner_small",
-          "settings": {
-            "banner_url_s": "shopify:\/\/collections\/wano-tsuki",
-            "banner_img_s": "shopify:\/\/shop_images\/slider02.jpg",
-            "banner_heading": "和の月（オーガニック）",
-            "description": "究極の有機のお酒『和の月』"
-          }
-        }
-      },
-      "block_order": [
-        "banner_small_PKqjLw",
-        "banner_small_3mHLHW"
-      ],
-      "name": "バナーブロック(BRAND)",
-      "settings": {
-        "color_scheme": "",
-        "title_display": true,
-        "title": "月の井のブランド",
-        "sub_title": "BRAND",
-        "columns_pc": 2,
-        "columns_space_pc": 32,
-        "columns_space_sp": 20,
-        "p_t_pc": 60,
-        "p_b_pc": 60,
-        "p_t_sp": 60,
-        "p_b_sp": 60
-      }
     }
   },
   "order": [
     "top_main_visual_LLM9d7",
     "section_banner_7hnppK",
+    "custom_featured_collection_hBQEVF",
     "section_banner_brand_bbUCrT",
+    "custom_featured_collection_ranking_LnmFmx",
     "top_subscription_VX4Mbx",
     "top_grid_banner_text_k8XRQN",
     "top_grid_banner_text_left_ThtmkY"
