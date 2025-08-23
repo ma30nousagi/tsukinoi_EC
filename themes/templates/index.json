@@ -112,7 +112,7 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "p_t_pc": 60,
         "p_b_pc": 60,
         "p_t_sp": 60,
@@ -184,7 +184,7 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "p_t_pc": 60,
         "p_b_pc": 60,
         "p_t_sp": 60,
@@ -250,6 +250,22 @@
         "p_t_sp": 20,
         "p_b_sp": 20
       }
+    },
+    "top_featured_blog_zxdFNN": {
+      "type": "top-featured-blog",
+      "name": "TOPページNews記事",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "News",
+        "columns_desktop": 1,
+        "show_date": true,
+        "color_scheme": "",
+        "p_t_pc": 20,
+        "p_b_pc": 20,
+        "p_t_sp": 20,
+        "p_b_sp": 20
+      }
     }
   },
   "order": [
@@ -260,6 +276,7 @@
     "custom_featured_collection_ranking_LnmFmx",
     "top_subscription_VX4Mbx",
     "top_grid_banner_text_k8XRQN",
-    "top_grid_banner_text_left_ThtmkY"
+    "top_grid_banner_text_left_ThtmkY",
+    "top_featured_blog_zxdFNN"
   ]
 }

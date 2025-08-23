@@ -121,12 +121,15 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  .mv-swiper .swiper-slide {
+    width: 100%!important;
+  }
   
   .top__main-banner {
     gap: 3.2rem;
   }
   
-  /* 1000px以下では16:9の制約を外して自然な高さで表示 */
   .top__main-banner--wrapper {
     height: auto; /* 自動調整 */
     width: 100%;
@@ -138,7 +141,8 @@
     position: relative;
     display: block;
     width: 100%;
-    max-width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     box-sizing: border-box;
   }
   

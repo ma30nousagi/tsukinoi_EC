@@ -58,3 +58,30 @@
     }
   }
 }
+
+
+/* custom */
+.top__blog .grid--1-col-desktop .article-card .card__content {
+  text-align: left!important;
+}
+
+.top__blog .card__information {
+  padding: 0!important;
+}
+
+.top__blog .card__heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.top__blog .blog__post {
+  border-top: 1px solid #ccc;
+}
+
+.top__blog .blog__post:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.top__blog .grid {
+  gap: 0!important;
+}
