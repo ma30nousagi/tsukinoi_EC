@@ -1,5 +1,13 @@
 {
   "sections": {
+    "breadcrumbs_b9enmH": {
+      "type": "breadcrumbs",
+      "name": "パンくずリスト",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "main": {
       "type": "custom-main-product",
       "blocks": {
@@ -43,7 +51,7 @@
             "heading": "送料",
             "icon": "none",
             "content": "",
-            "page": "materials-and-care"
+            "page": "shipping-table"
           }
         },
         "collapsible-row-1": {
@@ -52,7 +60,7 @@
             "heading": "お支払い方法",
             "icon": "none",
             "content": "",
-            "page": "shopping-guide"
+            "page": "shipping-about"
           }
         }
       },
@@ -93,7 +101,7 @@
         "columns_desktop": 3,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": true,
@@ -102,14 +110,6 @@
         "p_b_pc": 60,
         "p_t_sp": 40,
         "p_b_sp": 60
-      }
-    },
-    "breadcrumbs_b9enmH": {
-      "type": "breadcrumbs",
-      "name": "パンくずリスト",
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },

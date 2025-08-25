@@ -7,14 +7,14 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.p_t_sp }}px;
+    padding-bottom: {{ section.settings.p_b_sp }}px;
   }
-
+  
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: {{ section.settings.p_t_pc }}px;
+      padding-bottom: {{ section.settings.p_b_pc }}px;
     }
   }
 {%- endstyle -%}
@@ -28,14 +28,14 @@
 <cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="page-width">
     <div class="title-wrapper-with-link">
-      <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+      <h1 class="title title--primary cart-heading--title">{{ 'sections.cart.title' | t }}</h1>
       <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
         {{- 'general.continue_shopping' | t -}}
       </a>
     </div>
 
     <div class="cart__warnings">
-      <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
+      <h1 class="cart__empty-text cart-heading--title">{{ 'sections.cart.empty' | t }}</h1>
       <a href="{{ routes.all_products_collection_url }}" class="button">
         {{ 'general.continue_shopping' | t }}
       </a>
@@ -469,27 +469,47 @@
     },
     {
       "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
+      "content": "PC画面のセッティング"
     },
     {
       "type": "range",
-      "id": "padding_top",
+      "id": "p_t_pc",
+      "label": "セクション上の余白",
+      "default": 20,
       "min": 0,
       "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "step": 4
     },
     {
       "type": "range",
-      "id": "padding_bottom",
+      "id": "p_b_pc",
+      "label": "セクション下の余白",
+      "default": 20,
       "min": 0,
       "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
+      "step": 4
+    },
+    {
+      "type": "header",
+      "content": "SP画面のセッティング"
+    },
+    {
+      "type": "range",
+      "id": "p_t_sp",
+      "label": "セクション上の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
+    },
+    {
+      "type": "range",
+      "id": "p_b_sp",
+      "label": "セクション下の余白",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 4
     }
   ]
 }

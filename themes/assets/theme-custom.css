@@ -78,6 +78,11 @@
   color: #838352!important;
 }
 
+.cart-heading--title {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
 /* policy page */
 .shopify-policy__container {
   max-width: 850px!important;
@@ -87,4 +92,40 @@
 
 .shopify-policy__container h1 {
   font-size: 2.8rem;
+}
+
+/* custom-main-product.liquid */
+.product__accordion .guide_table {
+  width: 100%;
+}
+
+.product__accordion .guide_table,
+.product__accordion .guide_table th,
+.product__accordion .guide_table td {
+  border: 1px solid #838352;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.product__accordion .guide_table th {
+  width: 30%;
+  text-align: left;
+}
+
+.product__accordion .guide_table th,
+.product__accordion .guide_table td {
+  padding: 10px;
+}
+
+.product__accordion .p-tbl-list__th {
+  border-bottom: solid .1rem var(--color-main);
+  color: var(--color-main);
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+.product__accordion .list-payment {
+  justify-content: flex-start;
+  padding-left: 0!important;
 }

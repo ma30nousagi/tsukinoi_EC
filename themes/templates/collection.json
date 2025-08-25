@@ -5,7 +5,14 @@
       "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
-        "show_collection_image": false
+        "show_vendor": true,
+        "show_collection_image": false,
+        "pickup_description": "<p>季節の商品説明が入ります。<\/p>",
+        "selected_product": "",
+        "p_t_pc": 20,
+        "p_b_pc": 20,
+        "p_t_sp": 20,
+        "p_b_sp": 20
       }
     },
     "collection_header_dnFEdJ": {
@@ -25,7 +32,7 @@
         "columns_desktop": 3,
         "columns_mobile": "2",
         "color_scheme": "",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": true,
@@ -34,10 +41,10 @@
         "enable_filtering": false,
         "filter_type": "horizontal",
         "enable_sorting": true,
-        "p_t_pc": 20,
-        "p_b_pc": 20,
-        "p_t_sp": 20,
-        "p_b_sp": 20
+        "p_t_pc": 60,
+        "p_b_pc": 100,
+        "p_t_sp": 60,
+        "p_b_sp": 60
       }
     }
   },

@@ -4,8 +4,10 @@
       "type": "main-cart-items",
       "settings": {
         "color_scheme": "scheme-96b3b24d-0add-4d44-9cf8-562b93641a5d",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "p_t_pc": 40,
+        "p_b_pc": 40,
+        "p_t_sp": 40,
+        "p_b_sp": 40
       }
     },
     "cart-footer": {
@@ -26,8 +28,10 @@
       ],
       "settings": {
         "color_scheme": "scheme-96b3b24d-0add-4d44-9cf8-562b93641a5d",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "p_t_pc": 20,
+        "p_b_pc": 20,
+        "p_t_sp": 20,
+        "p_b_sp": 20
       }
     }
   },

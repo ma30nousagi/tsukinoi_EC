@@ -1509,7 +1509,7 @@ a.product__text {
 }
 
 .product__title h1 {
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   font-weight: 600;
 }
 
@@ -1594,6 +1594,11 @@ a.product__text {
   text-align: right;
 }
 
+.custom-price__product {
+  display: flex; 
+  justify-content: space-between;
+}
+
 .price__product-item {
   font-size: 3.2rem;
   letter-spacing: .15rem;
@@ -1607,6 +1612,11 @@ a.product__text {
 
 .product__tax-caption {
   text-align: right;
+}
+
+.product__badge-wrapper {
+  margin-right: 2rem;
+  line-height: 2.8;
 }
 
 /* buy-buttons.liquid */
