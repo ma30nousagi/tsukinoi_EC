@@ -629,3 +629,8 @@
     margin-left: auto;
   }
 }
+
+/* footer-bottom.liquid */
+.footer_main .list-payment {
+  justify-content: flex-start;
+}
